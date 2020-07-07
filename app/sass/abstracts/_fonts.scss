@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Proxima Nova ExCn Rg';
+  src: url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Regular.eot');
+  src: url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Regular.woff2') format('woff2'),
+  url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Regular.woff') format('woff'),
+  url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova ExCn Lt';
+  src: url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Light.woff2') format('woff2'),
+  url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Light.woff') format('woff'),
+  url('../fonts/ProximaNovaExtraCondensed/ProximaNovaExCn-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poiret One';
+  src: url('../fonts/PoiretOne/PoiretOne-Regular.eot');
+  src: url('../fonts/PoiretOne/PoiretOne-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/PoiretOne/PoiretOne-Regular.woff2') format('woff2'),
+  url('../fonts/PoiretOne/PoiretOne-Regular.woff') format('woff'),
+  url('../fonts/PoiretOne/PoiretOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

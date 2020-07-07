@@ -1,0 +1,22 @@
+.input {
+  background-color: $color-white;
+  display: inline;
+  font-size: 2rem;
+  color: $color-black;
+  align-items: center;
+  margin-right: 1.9rem;
+
+  &__inner {
+    display: flex;
+    padding: .4rem 2rem;
+  }
+
+  &__content {
+    margin: 0 1.9rem;
+  }
+
+  &__plus, &__minus {
+    @include alignment-vertical();
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,28 @@
+.gallery {
+
+    .tabs {
+        max-width: 170rem;
+        padding: 3.5rem 0 10.5rem 0;
+    }
+}
+
+.menu {
+    padding: 13rem 0 13.5rem 0;
+
+    .tabs {
+        max-width: 166rem;
+        padding: 0 0 9.4rem 0;
+    }
+}
+
+.booking {
+    background-color: $color-pink-light;
+    padding: 8.7rem 0 4.2rem 0;
+    text-align: center;
+}
+
+.booking-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}

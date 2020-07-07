@@ -1,0 +1,41 @@
+.pagination {
+  max-width: 55rem;
+  margin: auto;
+  display: flex;
+  color: $color-black;
+
+  &__inner {
+    margin-right: 7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__curent-position {
+    margin-left: 3.5rem;
+    margin-right: 6.5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      top: 50%;
+      right: -5.5rem;
+      position: absolute;
+      width: 4.5rem;
+      height: 1px;
+      background-color: $color-black;
+    }
+  }
+
+  &__last-position {
+    margin-right: 3.5rem;
+  }
+
+  &__curent-position, &__last-position {
+    padding: 0 1rem;
+  }
+
+  &__info {
+    font-size: 3.33rem;
+    line-height: 3.9rem;
+  }
+}

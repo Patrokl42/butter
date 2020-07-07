@@ -1,0 +1,27 @@
+@import "vendors/swiperjs";
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/fonts";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/tabs";
+@import "components/gallery";
+@import "components/dishes";
+@import "components/quantity";
+@import "components/cost";
+@import "components/pagination";
+@import "components/input";
+
+@import "layout/footer";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/grid";
+
+@import "pages/home";

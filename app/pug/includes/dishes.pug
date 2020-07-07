@@ -1,0 +1,76 @@
+-
+    const dishes = [
+        {
+            name: 'Паста ”Italiano pronto”',
+            price: '57',
+            currency: 'грн',
+            portion: '450',
+            image: '../img/Rectangle 10.png',
+            discription: 'Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від, наприклад'
+        },
+        {
+            name: 'Салат ”Мікс зелені”',
+            price: '53',
+            currency: 'грн',
+            portion: '200',
+            image: '../img/Rectangle 10.png',
+            discription: 'Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від, наприклад'
+        },
+        {
+            name: 'Суп гороховий з зеленню та сиром бакар',
+            price: '53',
+            currency: 'грн',
+            portion: '200',
+            image: '../img/Rectangle 10.png',
+            discription: 'Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому.'
+        },
+        {
+            name: 'Піцца ”Селянська”',
+            price: '53',
+            currency: 'грн',
+            portion: '200',
+            image: '../img/Rectangle 10.png',
+            discription: 'Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на відміну від, наприклад'
+        },
+    ];
+.dishes.row
+    each item in dishes
+        .dishes__item.col-1-of-2
+            .dishes__image
+                img(src=item.image)
+            .dishes__content
+                h3.dishes__name=item.name
+                .cost
+                    .cost__price
+                        span=item.price
+                        span=item.currency
+                    .cost__portion
+                        span=item.portion
+                        span='грам'
+                p.dishes__discription=item.discription
+                .quantity
+                    .btn.btn--pink='Додати до кошика'
+                    .quantity__inner
+                        span='Кількість:'
+                        .quantity__controls
+                            .quantity__plus
+                                <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
+                            .quantity__info
+                                span='1'
+                                span='шт.'
+                            .quantity__minus
+                                <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
+.pagination
+    .pagination__inner
+        .btn.btn--icon.btn--green
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 17L0.999999 9L9 1" stroke="#333333"/>
+            </svg>
+        .pagination__info
+            span.pagination__curent-position='1'
+            span.pagination__last-position='6'
+        .btn.btn--icon.btn--green
+            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L9 9L1 17" stroke="#333333"/>
+            </svg>
+    .btn.btn--green='Перейти до кошика'

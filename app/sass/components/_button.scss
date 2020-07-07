@@ -1,0 +1,22 @@
+.btn {
+  display: flex;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  height: 4.3rem;
+  align-items: center;
+
+  &--pink {
+    background-color: $color-pink-dark;
+  }
+
+  &--green {
+    background-color: $color-green;
+  }
+
+  &--icon {
+    height: 4.2rem;
+    width: 4.2rem;
+    @include alignment-vertical();
+  }
+}
