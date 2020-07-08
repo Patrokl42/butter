@@ -1,0 +1,74 @@
+.company-info {
+  max-width: calc(100% - 22.6rem);
+  width: 100%;
+  margin: 0 0 0 auto;
+
+  &__top {
+    padding: 11.1rem 0 3.5rem 0;
+    font-size: 2rem;
+    background-color: $color-pink-light;
+  }
+
+  &__bottom {
+    height: 24.8rem;
+  }
+
+  &__map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__location {
+    color: $color-black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__city {
+    font-size: 3.3rem;
+  }
+
+  &__street {
+    font-size: 5.17rem;
+  }
+
+  &__city, &__street {
+    display: block;
+  }
+}
+
+.contact-wrapper,
+.work-schedule,
+.company-info__location,
+.company-info__map {
+  width: 50%;
+}
+
+.work-schedule {
+  @include reset-list;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    max-width: 27.1rem;
+    color: $color-black;
+  }
+}
+
+.contacts {
+  @include reset-list;
+  color: $color-black;
+
+  &__item a {
+    @include reset-links;
+  }
+}
+
+.contact-inner {
+  width: 49.2rem;
+}
+
+.contact-form {
+  margin-top: 2rem;
+}

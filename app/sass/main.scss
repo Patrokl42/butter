@@ -12,16 +12,24 @@
 
 @import "components/button";
 @import "components/tabs";
-@import "components/gallery";
 @import "components/dishes";
 @import "components/quantity";
 @import "components/cost";
 @import "components/pagination";
 @import "components/input";
+@import "components/news";
+@import "components/testimonial";
 
 @import "layout/footer";
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/grid";
+@import "layout/booking";
+@import "layout/gallery";
+@import "layout/menu";
+@import "layout/dashboard";
+@import "layout/testimonials";
+@import "layout/contacts";
+@import "layout/order-table";
 
 @import "pages/home";

@@ -5,6 +5,19 @@
 
   &__price {
     font-size: 3.3rem;
+
+    &--new {
+      color: $color-red;
+
+      & span:first-child {
+        font-size: 5rem
+      }
+    }
+
+    &--old {
+      text-decoration: line-through;
+      margin-right: 1.3rem;
+    }
   }
 
   &__portion {
@@ -19,6 +32,14 @@
       background-color: $color-primary-dark;
       width: 1px;
       height: 2.5rem;
+    }
+  }
+
+  &--black {
+    color: $color-black;
+
+    .cost__portion::before {
+      background-color: $color-black;
     }
   }
 }

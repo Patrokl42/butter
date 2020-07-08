@@ -2,15 +2,14 @@
 $color-primary: #6C6C6C;
 $color-primary-dark: #858585;
 
-
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
-
 $color-pink-dark: #F1DAE2;
 $color-pink-light: #F1E8EB;
 
+$color-red: #FF033F;
+
 $color-green: #CDE1C6;
 
+$color-yellow: #FCA016;
 
 $color-white: #fff;
 $color-black: #000;
@@ -21,6 +20,9 @@ $default-font-size: 1.6rem;
 
 // GRID
 $grid-width: 114rem;
-$gutter-vertical: 8rem;
-$gutter-vertical-small: 6rem;
-$gutter-horizontal: 6rem;
+
+$dishes-gutter-horizontal: 6rem;
+$dishes-gutter-vertical: 5.6rem;
+
+$news-gutter-horizontal: 4.2rem;
+$news-gutter-vertical: 0;

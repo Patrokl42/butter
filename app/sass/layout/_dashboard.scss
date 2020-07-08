@@ -1,0 +1,28 @@
+.dashboard {
+  max-width: 144rem;
+  margin: 14.6rem auto auto auto;
+}
+
+.dashboard-container {
+  display: flex;
+
+  &:not(:last-child) {
+    margin-bottom: 4.3rem;
+  }
+}
+
+.dashboard-title {
+  color: $color-primary;
+  font-size: 5rem;
+  position: relative;
+  width: 4%;
+
+  span {
+    position: relative;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: right;
+    line-height: 2rem;
+  }
+}

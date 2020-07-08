@@ -15,3 +15,17 @@ body {
     font-size: 3.3rem;
     line-height: 3.9rem;
 }
+
+.paragraph {
+    font-size: 2rem;
+    font-family: "Proxima Nova ExCn Lt", sans-serif;
+    font-weight: 300;
+    color: $color-primary-dark;
+    line-height: 2.4rem;
+}
+
+::placeholder {
+    color: $color-black;
+    font-size: 2rem;
+    font-family: "Poiret One", sans-serif;
+}

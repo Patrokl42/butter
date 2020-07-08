@@ -1,0 +1,20 @@
+.testimonials {
+  margin: 15.3rem auto 7.8rem auto;
+  max-width: 145.9rem;
+  width: 100%;
+  position: relative;
+}
+.testimonial-button-prev, .testimonial-button-next {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.testimonial-button-prev {
+  left: -6.9rem;
+}
+
+.testimonial-button-next {
+  right: -6.9rem;
+}

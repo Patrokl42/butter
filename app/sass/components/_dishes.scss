@@ -4,6 +4,7 @@
   &__item {
     display: flex;
     align-items: stretch;
+    @include col-1-of-2($dishes-gutter-horizontal, $dishes-gutter-vertical);
   }
 
   &__image {
@@ -28,11 +29,6 @@
   }
 
   &__discription {
-    font-size: 2rem;
-    font-family: "Proxima Nova ExCn Lt", sans-serif;
-    font-weight: 300;
-    color: $color-primary-dark;
-    line-height: 2.4rem;
     max-height: 7.2rem;
     height: 100%;
     margin-top: 2rem;
@@ -40,13 +36,5 @@
 
   .quantity {
     margin-top: 2rem;
-
-    &__inner {
-      margin-left: 2rem;
-    }
-
-    &__inner > span {
-      margin-right: 2rem;
-    }
   }
 }

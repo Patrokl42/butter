@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-  slider('.swiper-container');
+  slider('.gallery-container');
+  testymonialsSlider('.testimonials-slider');
 });
 
 function gallery(galleryClass, tabsClass) {
@@ -17,8 +18,21 @@ function slider(sliderClass) {
     loop: true,
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.gallery-button-next',
+      prevEl: '.gallery-button-prev',
+    },
+  })
+};
+
+function testymonialsSlider(sliderClass) {
+  var mySwiper = new Swiper(sliderClass , {
+    slidesPerView: 2,
+    spaceBetween: 71,
+    loop: true,
+
+    navigation: {
+      nextEl: '.testimonial-button-next',
+      prevEl: '.testimonial-button-prev',
     },
   })
 };

@@ -5,6 +5,12 @@
   &__inner {
     display: flex;
     font-size: 2rem;
+    padding: .45rem 2rem;
+    background-color: $color-white;
+
+    & > span {
+      margin-right: 2rem;
+    }
   }
 
   &__controls {

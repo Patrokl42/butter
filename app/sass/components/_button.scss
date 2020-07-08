@@ -5,6 +5,9 @@
   cursor: pointer;
   height: 4.3rem;
   align-items: center;
+  border: none;
+  font-family: inherit;
+  outline: none;
 
   &--pink {
     background-color: $color-pink-dark;
