@@ -55,19 +55,21 @@ section.order-table
                             span=item.portion
                             span='грам'
                 .order-table-item__number
-                    .quantity__controls
-                        .quantity__plus
-                            <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
-                        .quantity__info
-                            span=item.number
-                            span='шт.'
-                        .quantity__minus
-                            <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
+                    .quantity
+                        .quantity__controls
+                            .quantity__plus
+                                <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
+                            .quantity__info
+                                span=item.number
+                                span='шт.'
+                            .quantity__minus
+                                <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
                 .order-table-item__total-price
-                    .cost__price
-                        span=item.cost
-                        span=item.currency
-                .order-table-item__total-delete
+                    .cost
+                        .cost__price
+                            span=item.cost
+                            span=item.currency
+                .order-table-item__delete
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0)">
                     <path d="M15.9483 9.0575C15.6249 9.0575 15.3628 9.31959 15.3628 9.64297V20.7085C15.3628 21.0317 15.6249 21.294 15.9483 21.294C16.2717 21.294 16.5338 21.0317 16.5338 20.7085V9.64297C16.5338 9.31959 16.2717 9.0575 15.9483 9.0575Z" fill="black"/>
@@ -82,3 +84,10 @@ section.order-table
                     </defs>
                     </svg>
     .order-table-footer
+        .order-table-item
+            .order-table-item__full-price
+                span='Всього на суму :'
+                .cost
+                    .cost__price
+                        span='785'
+                        span='грн'

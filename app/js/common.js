@@ -3,14 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
   testymonialsSlider('.testimonials-slider');
 });
 
-function gallery(galleryClass, tabsClass) {
-  $('.multiple-items').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 3
-  });
-}
-
 function slider(sliderClass) {
   var mySwiper = new Swiper(sliderClass , {
     slidesPerView: 4,

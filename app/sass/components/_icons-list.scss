@@ -1,0 +1,7 @@
+.icons-list {
+  @include reset-list;
+
+  &__item {
+    margin-left: 2rem;
+  }
+}

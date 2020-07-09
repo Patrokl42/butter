@@ -1,5 +1,34 @@
 .navigation {
-    &__checkbox {
-        display: none;
+    justify-content: space-between;
+    padding: 2.5rem 11rem 7rem 12rem;
+    font-size: 2.1rem;
+    background-color: $color-pink-light;
+    margin-top: 2.5rem;
+}
+
+.nav-list {
+    @include reset-list;
+
+    &__item {
+        padding: 1rem;
+        margin-right: 7.6rem;
+
+        a {
+            @include reset-links;
+        }
+
+        &--active {
+            background-color: $color-white;
+        }
+    }
+}
+
+.basket {
+    @include alignment-vertical;
+    @include reset-links;
+
+    span {
+        padding-top: 1rem;
+        margin-right: 1rem;
     }
 }
