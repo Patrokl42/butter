@@ -21,8 +21,9 @@
 
     &--large {
       max-width: 85rem;
-      background-color: $color-grey-light;
+      background-color: $color-white;
       border-left: none;
+      box-shadow: inset 0px 4px 40px rgba(0, 0, 0, 0.08)
     }
   }
 }
