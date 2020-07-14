@@ -1,22 +1,44 @@
-.dishes {
+body .dishes {
   max-width: calc(100% - 6rem);
+  display: none;
+
+  &--active {
+    display: flex;
+  }
 
   &__item {
     display: flex;
-    align-items: stretch;
     @include col-1-of-2($dishes-gutter-horizontal, $dishes-gutter-vertical);
   }
 
   &__image {
-    max-width: 29.1rem;
+    min-width: 29.1rem;
+    min-height: 29.1rem;
     max-height: 29.1rem;
+    max-width: 29.1rem;
     margin-right: 4.9rem;
-    width: 100%;
-    height: 100%;
 
     img {
       width: 100%;
       height: 100%;
+    }
+
+    @media screen and (max-width: 100.6875em) {
+      margin-right: 2.9rem;
+    }
+
+    @media screen and (max-width: 98.1875em){
+      min-width: 27.1rem;
+      min-height: 27.1rem;
+      max-height: 27.1rem;
+      max-width: 27.1rem;
+    }
+
+    @media screen and (max-width: 87.5em){
+      min-width: 23.1rem;
+      min-height: 23.1rem;
+      max-height: 23.1rem;
+      max-width: 23.1rem;
     }
   }
 
@@ -24,17 +46,28 @@
     font-size: 3.3rem;
     font-weight: normal;
     line-height: 3.9rem;
-    max-height: 7.8rem;
-    height: 100%;
   }
 
   &__discription {
-    max-height: 7.2rem;
-    height: 100%;
     margin-top: 2rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .quantity {
     margin-top: 2rem;
   }
 }
+
+.dishes-inner {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+

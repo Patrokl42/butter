@@ -1,6 +1,7 @@
 .header {
   padding: 30.1rem 0 13.3rem 0;
   position: relative;
+  //margin-top: 22rem;
 }
 
 .image-collection {
@@ -14,6 +15,14 @@
     margin-right: 7.5rem;
     @include alignment-vertical;
 
+    @media screen and (max-width: 104.375em) {
+      margin-right: 3.5rem;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -23,7 +32,8 @@
       max-width: 85rem;
       background-color: $color-white;
       border-left: none;
-      box-shadow: inset 0px 4px 40px rgba(0, 0, 0, 0.08)
+      box-shadow: inset 0px 4px 40px rgba(0, 0, 0, 0.08);
+      flex: 1;
     }
   }
 }
@@ -44,6 +54,7 @@
 .header-image {
   max-width: 108.7rem;
   max-height: 44.1rem;
+  flex: 1;
 
   img {
     width: 100%;

@@ -1,6 +1,11 @@
 .dashboard {
   max-width: 144rem;
   margin: 14.6rem auto auto auto;
+  padding-right: 2rem;
+
+  @media screen and (max-width: 93.125em){
+    margin: 14.6rem auto auto 2rem;
+  }
 }
 
 .dashboard-container {

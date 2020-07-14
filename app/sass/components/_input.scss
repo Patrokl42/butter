@@ -33,4 +33,15 @@
   border: none;
   outline: none;
   padding: 1rem 3rem;
+
+  &--phone-number {
+    max-width: 19.3rem;
+    margin-right: 1.9rem;
+  }
+
+  &--name {
+    max-width: 16.4rem;
+    text-align: center;
+    margin-right: 1.9rem;
+  }
 }

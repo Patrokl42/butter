@@ -1,16 +1,28 @@
 .company-info {
-  max-width: calc(100% - 22.6rem);
   width: 100%;
   margin: 0 0 0 auto;
+  max-width: 169.6rem;
+
+  @media screen and (max-width: 85em){
+    margin: 0;
+  }
 
   &__top {
     padding: 11.1rem 0 3.5rem 0;
     font-size: 2rem;
     background-color: $color-pink-light;
+
+    @media screen and (max-width: 85em){
+      padding-left: 2rem;
+    }
   }
 
   &__bottom {
     height: 24.8rem;
+
+    @media screen and (max-width: 85em){
+      padding-left: 2rem;
+    }
   }
 
   &__map iframe {
@@ -31,6 +43,10 @@
 
   &__street {
     font-size: 5.17rem;
+
+    @media screen and (max-width: 85em){
+      font-size: 4.17rem;
+    }
   }
 
   &__city, &__street {

@@ -1,7 +1,7 @@
-ul.tabs
-    li.tabs__item.tabs__item--active='Закуски'
-    li.tabs__item='Салати'
-    li.tabs__item='Піца'
-    li.tabs__item='Дитячі страви'
-    li.tabs__item='Гарячі закуски'
-    li.tabs__item='Напої'
+ul.tabs.tabs-menu
+    li.tabs__item.tabs__item--active(data-item-type='appetizer')='Закуски'
+    li.tabs__item(data-item-type='salads')='Салати'
+    li.tabs__item(data-item-type='Pizza')='Піца'
+    li.tabs__item(data-item-type='Children-dishes')='Дитячі страви'
+    li.tabs__item(data-item-type='Hot-appetizers')='Гарячі закуски'
+    li.tabs__item(data-item-type='Drinks')='Напої'

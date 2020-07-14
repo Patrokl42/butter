@@ -1,31 +1,34 @@
 section.booking
-    span.box-title='Забронюй місце в ресторані'
-    form.booking-form
-        .input-block.input-person
-            .input-block__inner
-                .input-block__plus
-                    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
-                .input-block__content
-                    span='1 '
-                    span='персона'
-                .input-block__minus
-                    <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
-        .input-block.input-day
-            .input-block__inner
-                .input-block__plus
-                    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
-                .input-block__content
-                    span='Середа'
-                .input-block__minus
-                    <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
-        .input-block.input-time
-            .input-block__inner
-                .input-block__plus
-                    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
-                .input-block__content
-                    span='13'
-                    span=':'
-                    span='00'
-                .input-block__minus
-                    <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
-        button(type='button').btn.btn--green='ЗАБРОНЮВАТИ'
+    .booking__inner
+        span.box-title='Забронюй місце в ресторані'
+        form.booking-form
+            .input-block
+                .input-block__inner.input-person
+                    .input-block__plus
+                        <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
+                    .input-block__content
+                        span='1 '
+                        span='персона'
+                    .input-block__minus
+                        <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
+            .input-block
+                .input-block__inner.input-day
+                    .input-block__plus
+                        <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
+                    .input-block__content
+                        span='Понеділок'
+                    .input-block__minus
+                        <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
+            .input-block
+                .input-block__inner.input-time
+                    .input-block__plus
+                        <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
+                    .input-block__content
+                        span='13'
+                        span=':'
+                        span='00'
+                    .input-block__minus
+                        <svg width="10" height="3" viewBox="0 0 10 3" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 1.5L10 1.5" stroke="#333333" stroke-width="2"/></svg>
+            input(placeholder="Ім’я" name='phone-number').input.input--name
+            input(placeholder="+380 -- -- -- ---" name='phone-number').input.input--phone-number
+            button(type='button').btn.btn--green='ЗАБРОНЮВАТИ'

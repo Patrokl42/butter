@@ -32,7 +32,7 @@ gulp.task('styles', function() {
 	.pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
 	.pipe(autoprefixer(['last 15 versions']))
-	// .pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
+	.pipe(cleancss( {level: { 1: { specialComments: 0 } } })) // Opt., comment out when debugging
 	.pipe(gulp.dest('dest/css'))
 	.pipe(browserSync.stream())
 });
@@ -65,6 +65,7 @@ gulp.task('scripts', function() {
 	  'app/js/jQuery.js',
 	  'app/js/anchor.js',
 	  'app/js/swiperjs.js',
+	  'app/js/fancybox.js',
 	  'app/js/jquery.mask.min.js',
 	  'app/js/common.js' // Always at the end
 	])

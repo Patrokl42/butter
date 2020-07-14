@@ -1,0 +1,23 @@
+.footer {
+  background-color: $color-grey;
+  padding: 2.4rem 0 2.7rem 0;
+  color: $color-white-grey;
+
+  &__inner {
+    justify-content: space-between;
+    display: flex;
+    max-width: 157.5rem;
+    margin: 0 12.2rem 0 auto;
+  }
+
+  .icons-list {
+    width: max-content;
+    padding-right: 2rem;
+    white-space: nowrap;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: $color-white-grey;
+  }
+}

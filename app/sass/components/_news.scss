@@ -5,13 +5,14 @@
     background-image: url("../img/Rectangle 16.png");
     background-size: cover;
     background-position: top left;
-    width: 135.2rem;
+    max-width: 135.2rem;
     height: 50.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
     padding: 0 2.7rem 2.6rem 0;
+    width: 100%;
   }
 
   &__info {
@@ -45,11 +46,13 @@
     img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 }
 
 .news-list {
-  min-width: 135.2rem;
+  //min-width: 135.2rem;
   max-width: 135.2rem;
+  width: 100%;
 }

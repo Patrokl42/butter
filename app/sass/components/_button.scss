@@ -8,6 +8,7 @@
   border: none;
   font-family: inherit;
   outline: none;
+  white-space: nowrap;
 
   &--pink {
     background-color: $color-pink-dark;
@@ -17,9 +18,21 @@
     background-color: $color-green;
   }
 
+  &--red {
+    background-color: $color-red-light;
+    color: $color-white;
+    font-weight: normal;
+  }
+
   &--icon {
     height: 4.2rem;
     width: 4.2rem;
     @include alignment-vertical();
+  }
+
+  &--with-icon {
+    span {
+      padding-right: 1.8rem;
+    }
   }
 }
