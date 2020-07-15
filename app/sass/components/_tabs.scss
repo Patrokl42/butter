@@ -13,6 +13,10 @@
     line-height: 2.6rem;
     cursor: pointer;
 
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
     &--active {
       font-size: 3.3rem;
       border-bottom: 2px solid rgba(51, 51, 51, 0.5);

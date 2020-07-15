@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   gallery();
 
+  stickyNavbar();
+
   const dishesTypeArray = document.querySelectorAll('.dishes-inner');
   dishesTypeArray.forEach(dishesType => {
     dishesSwitcher(
@@ -197,13 +199,14 @@ function gallery() {
 function stickyNavbar() {
   const navbar = document.querySelector(".navigation");
   const sticky = navbar.offsetTop;
+  console.log(sticky);
 
   window.onscroll = function() {
 
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add("sticky")
+    if (window.pageYOffset >= 20) {
+      navbar.classList.add("navigation--sticky")
     } else {
-      navbar.classList.remove("sticky");
+      navbar.classList.remove("navigation--sticky");
     }
   };
 }

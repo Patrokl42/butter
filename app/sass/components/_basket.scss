@@ -1,0 +1,25 @@
+.basket {
+  position: relative;
+
+  &::before {
+    font-family: "Poiret One", sans-serif;
+    content: '3';
+    background-color: $color-red-light;
+    position: absolute;
+    right: -1rem;
+    top: 0;
+    font-size: 1.2rem;
+    color: $color-white;
+    width: 1.8rem;
+    height: 1.8rem;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 0.6px;
+  }
+
+  &--active::before {
+    display: flex;
+  }
+}

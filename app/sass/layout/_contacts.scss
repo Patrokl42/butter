@@ -1,16 +1,25 @@
 .company-info {
   width: 100%;
-  margin: 0 0 0 auto;
-  max-width: 169.6rem;
 
   @media screen and (max-width: 85em){
     margin: 0;
   }
 
+  &__title {
+    display: inline-block;
+    padding-bottom: 4.8rem;
+  }
+
+  &__inner {
+    background-image: url("../img/Subtract_2.png");
+    background-size: cover;
+  }
+
   &__top {
     padding: 11.1rem 0 3.5rem 0;
     font-size: 2rem;
-    background-color: $color-pink-light;
+    margin: 0 0 0 auto;
+    max-width: 169.6rem;
 
     @media screen and (max-width: 85em){
       padding-left: 2rem;
@@ -19,6 +28,8 @@
 
   &__bottom {
     height: 24.8rem;
+    margin: 0 0 0 auto;
+    max-width: 169.6rem;
 
     @media screen and (max-width: 85em){
       padding-left: 2rem;
@@ -82,9 +93,32 @@
 }
 
 .contact-inner {
-  width: 49.2rem;
+  max-width: 55.2rem;
+  width: 100%;
 }
 
 .contact-form {
-  margin-top: 2rem;
+  margin-top: 3rem;
+
+  .input--name {
+    max-width: 15.2rem;
+  }
+
+  .input--phone-number {
+    max-width: 18.4rem;
+  }
+
+  .company-info__title {
+    padding-bottom: 0;
+  }
+
+  .textarea {
+    margin-bottom: 1.3rem;
+  }
+}
+
+.contact-wrapper {
+  .company-info__title {
+    padding-bottom: 1rem;
+  }
 }

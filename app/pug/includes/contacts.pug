@@ -1,49 +1,50 @@
 section.company-info
-    .company-info__top.row
-        ul.work-schedule
-            span.company-info__title='Ми відкриті:'
-            li.work-schedule__item
-                span='Понеділок'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='Вівторок'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='Середа'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='Четвер'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='П’ятниця'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='Субота'
-                .work-time
-                    span='11.00-23.00'
-            li.work-schedule__item
-                span='Неділя'
-                .work-time
-                    span='11.00-23.00'
-        .contact-wrapper
-            .contact-inner
-                span.company-info__title='Контакти:'
-                ul.contacts
-                    li.contacts__item
-                        a(href='#')='+38 (098) 252-62-56'
-                    li.contacts__item
-                        a(href='#')='+38 (098) 252-62-56'
-                form.contact-form
-                    textarea(placeholder="*Твоє повідомлення" name='message').textarea
-                    .row
-                        //input(placeholder="*Ім’я" name='name').input
-                        input(placeholder="+38 --- -- -- ---" name='phone-number').input
-                        button(type='submit').btn.btn--green='ЗАБРОНЮВАТИ'
+    .company-info__inner
+        .company-info__top.row
+            ul.work-schedule
+                span.company-info__title='Ми відкриті:'
+                li.work-schedule__item
+                    span='Понеділок'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='Вівторок'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='Середа'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='Четвер'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='П’ятниця'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='Субота'
+                    .work-time
+                        span='11.00-23.00'
+                li.work-schedule__item
+                    span='Неділя'
+                    .work-time
+                        span='11.00-23.00'
+            .contact-wrapper
+                .contact-inner
+                    span.company-info__title='Контакти:'
+                    ul.contacts
+                        li.contacts__item
+                            a(href='#')='+38 (098) 252-62-56'
+                        li.contacts__item
+                            a(href='#')='+38 (098) 252-62-56'
+                    form.contact-form
+                        textarea(placeholder="*Твоє повідомлення" name='message').textarea
+                        .row
+                            input(placeholder="*Ім’я" name='phone-number').input.input--name
+                            input(placeholder="+38 -- -- -- ---" name='phone-number' data-mask="+380 00 00 00 000").input.input--phone-number
+                            button(type='submit').btn.btn--green='НАДІСЛАТИ'
     .company-info__bottom.row
         .company-info__location
             span.company-info__city='Івано-Франківськ'

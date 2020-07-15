@@ -1,7 +1,7 @@
 .icons-list {
   @include reset-list;
 
-  &__item {
+  &__item:not(:first-child) {
     margin-left: 2rem;
   }
 }

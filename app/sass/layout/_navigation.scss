@@ -6,12 +6,50 @@
     border-top: 2.5rem solid $color-white;
     z-index: 3;
 
+    transition: all .3s ease;
+
     &__inner {
         max-width: 169rem;
         margin: auto;
         display: flex;
         justify-content: space-between;
         width: 100%;
+    }
+
+    &__logo {
+        display: none;
+    }
+
+    &--sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: $color-white;
+        border-top: none;
+        padding: 2.1rem 2rem 1.9rem 2rem;
+        box-shadow: 0px 4px 30px rgba(51, 51, 51, 0.13);
+        color: $color-black;
+
+        z-index: 3;
+
+        .navigation__inner {
+            max-width: 170rem;
+        }
+
+        .navigation__logo {
+            @include alignment-vertical;
+        }
+
+        .nav-list__item {
+
+            &:hover {
+                background-color: $color-pink-light;
+            }
+
+            &--active {
+                background-color: $color-pink-light;
+            }
+        }
     }
 }
 
@@ -21,6 +59,15 @@
     &__item {
         padding: 1rem;
         margin-right: 7.6rem;
+        transition: background-color .3s ease;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $color-white;
+        }
 
         a {
             @include reset-links;
@@ -37,13 +84,6 @@
     @include reset-links;
 
     span {
-        padding-top: 1rem;
         margin-right: 1rem;
     }
-}
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
 }

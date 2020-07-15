@@ -9,6 +9,12 @@ body .dishes {
   &__item {
     display: flex;
     @include col-1-of-2($dishes-gutter-horizontal, $dishes-gutter-vertical);
+
+    @media screen and (max-width: 88.75em){
+      width: calc((100% / 2) - (4rem / 2));
+      margin-right: 4rem;
+      margin-bottom: 3.6rem;
+    }
   }
 
   &__image {
@@ -34,11 +40,13 @@ body .dishes {
       max-width: 27.1rem;
     }
 
-    @media screen and (max-width: 87.5em){
+    @media screen and (max-width: 93.75em){
       min-width: 23.1rem;
       min-height: 23.1rem;
       max-height: 23.1rem;
       max-width: 23.1rem;
+
+      margin-right: 1.9rem;
     }
   }
 
