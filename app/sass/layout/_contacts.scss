@@ -1,6 +1,10 @@
 .company-info {
   width: 100%;
 
+  @media screen and (max-width: 108.125em){
+    padding-left: 2rem;
+  }
+
   @media screen and (max-width: 85em){
     margin: 0;
   }

@@ -13,6 +13,11 @@
     align-items: flex-end;
     padding: 0 2.7rem 2.6rem 0;
     width: 100%;
+
+    @media screen and (max-width: 58.75em){
+      max-width: 106.2rem;
+      height: 43.5rem;
+    }
   }
 
   &__info {
@@ -43,6 +48,16 @@
     width: 100%;
     height: 100%;
 
+    @media screen and (max-width: 67.1875em){
+      max-width: 60.6rem;
+      max-height: 34rem;
+    }
+
+    @media screen and (max-width: 58.75em){
+      max-width: 50.6rem;
+      max-height: 28rem;
+    }
+
     img {
       width: 100%;
       height: 100%;
@@ -52,7 +67,6 @@
 }
 
 .news-list {
-  //min-width: 135.2rem;
   max-width: 135.2rem;
   width: 100%;
 }

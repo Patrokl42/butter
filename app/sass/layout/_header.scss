@@ -1,6 +1,10 @@
 .header {
   padding: 30.1rem 0 13.3rem 0;
   position: relative;
+
+  @media screen and (max-width: 73.125em){
+    padding: 30.1rem 0 7.3rem 0;
+  }
 }
 
 .image-collection {
@@ -16,6 +20,11 @@
 
     @media screen and (max-width: 104.375em) {
       margin-right: 3.5rem;
+    }
+
+    @media screen and (max-width: 63.125em){
+      width: 31.1rem;
+      height: 29.7rem;
     }
 
     &:last-child {

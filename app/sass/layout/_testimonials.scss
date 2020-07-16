@@ -4,10 +4,8 @@
   width: 100%;
   position: relative;
 
-  @media screen and (max-width: 102.1875em){
-    width: 100%;
-    max-width: none;
-    padding: 0 8rem;
+  @media screen and (max-width: 106.25em){
+    padding: 0 6rem;
   }
 }
 
@@ -22,14 +20,14 @@
   left: -9.9rem;
 
   @media screen and (max-width: 106.25em){
-    left: 1.9rem;
+    left: 1rem;
   }
 }
 
 .testimonial-button-next {
-  right: -9.9rem;
+  right: -2.9rem;
 
-  //@media screen and (max-width: 106.25em){
-  //  right: 1.9rem;
-  //}
+  @media screen and (max-width: 106.25em){
+    right: 1rem;
+  }
 }

@@ -1,11 +1,26 @@
 .testimonial {
   display: flex;
 
+  //@media screen and (max-width: 67.8125em) {
+  //  justify-content: center;
+  //}
+
   &__image {
     max-height: 19.7rem;
     max-width: 19.7rem;
     height: 100%;
     width: 100%;
+    flex: none;
+
+    @media screen and (max-width: 100.6875em) {
+      max-height: 16.7rem;
+      max-width: 16.7rem;
+    }
+
+    //@media screen and (max-width: 67.8125em) {
+    //  max-height: 19.7rem;
+    //  max-width: 19.7rem;
+    //}
 
     img {
       width: 100%;

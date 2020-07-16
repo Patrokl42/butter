@@ -11,5 +11,10 @@
 
 .booking-form {
   display: flex;
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+
+  > * {
+    margin-top: 2rem;
+  }
 }

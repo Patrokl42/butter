@@ -155,7 +155,7 @@ function setActiveElementByDataAttribute(query, dataAttribute, activeClass) {
 
 function slider(sliderClass) {
   var mySwiper = new Swiper(sliderClass , {
-    slidesPerView: 2,
+    slidesPerView: 4,
     spaceBetween: 0,
     loop: true,
     observer: true,
@@ -167,11 +167,11 @@ function slider(sliderClass) {
     },
 
     breakpoints: {
-      1500: {
-        slidesPerView: 4,
+      900: {
+        slidesPerView: 3,
       },
       1100: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
     }
   })
@@ -180,26 +180,92 @@ function slider(sliderClass) {
 function testymonialsSlider(sliderClass) {
   var mySwiper = new Swiper(sliderClass , {
     slidesPerView: 2,
-    spaceBetween: 71,
+    spaceBetween: 30,
     loop: true,
 
     navigation: {
       nextEl: '.testimonial-button-next',
       prevEl: '.testimonial-button-prev',
     },
+
+    breakpoints: {
+      800: {
+        spaceBetween: 30
+      },
+
+      1250: {
+        spaceBetween: 71
+      },
+
+      // 1085: {
+      //   slidesPerView: 2,
+      // },
+    }
   })
 };
 
 function gallery() {
-  $('.gallery-wrapper .gallery-slide img').fancybox({
+  $('[data-fancybox]').fancybox({
     // Options will go here
+    buttons : [
+      'close'
+    ],
+
+    infobar: true,
+
+    beforeShow: function() {
+      setBlur(['.navigation', '.gallery', '.header', '.menu']);
+    },
+
+    afterClose: function() {
+      removeBlur(['.navigation', '.gallery', '.header', '.menu']);
+    },
+
+    btnTpl: {
+      close:
+          '<button data-fancybox-close class="fancybox-button--close btn btn--icon btn--green" title="{{CLOSE}}">' +
+          '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 1L14 14" stroke="black"/> <path d="M1 14L14 0.999999" stroke="black"/> </svg>' +
+          "</button>",
+
+      // Arrows
+      arrowLeft:
+          '<button data-fancybox-prev class=" btn btn--icon btn--green" title="{{PREV}}">' +
+          '<svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 17L0.999999 9L9 1" stroke="#333333"/> </svg>' +
+          "</button>",
+
+      arrowRight:
+          '<button data-fancybox-next class="btn btn--icon btn--green" title="{{NEXT}}">' +
+          '<svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 1L9 9L1 17" stroke="#333333"/> </svg>' +
+          "</button>",
+    },
+
+    // Base template for layout
+    baseTpl:
+        '<div class="fancybox-container" role="dialog" tabindex="-1">' +
+        '<div class="fancybox-bg"></div>' +
+        '<div class="fancybox-inner">' +
+        '<div class="fancybox-toolbar">{{buttons}}</div>' +
+        '<div class="fancybox-stage"><div class="gallery-controls"> <div class="fancybox-infobar"><span data-fancybox-index></span><svg width="45" height="1" viewBox="0 0 45 1" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0 0.5H45" stroke="black"/> </svg><span data-fancybox-count></span></div> <div class="fancybox-navigation">{{arrows}}</div></div></div>' +
+        '</div>' +
+        '</div>',
+  });
+}
+
+function setBlur(classList) {
+  classList.forEach(item => {
+    document.querySelector(item).classList.add('blured');
+  });
+}
+
+function removeBlur(classList) {
+  classList.forEach(item => {
+    document.querySelector(item).classList.remove('blured');
   });
 }
 
 function stickyNavbar() {
   const navbar = document.querySelector(".navigation");
   const sticky = navbar.offsetTop;
-  console.log(sticky);
 
   window.onscroll = function() {
 

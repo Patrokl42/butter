@@ -3,6 +3,10 @@
   padding: 2.4rem 0 2.7rem 0;
   color: $color-white-grey;
 
+  @media screen and (max-width: 108.125em){
+    padding: 2.4rem 0 2.7rem 2rem;
+  }
+
   &__inner {
     justify-content: space-between;
     display: flex;
@@ -14,6 +18,8 @@
     width: max-content;
     padding-right: 2rem;
     white-space: nowrap;
+
+    flex: none;
   }
 
   &__text {

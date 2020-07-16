@@ -31,6 +31,11 @@
     padding: 1rem;
   }
 
+  &__icon {
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+
   &--with-icon {
     span {
       padding-right: 1.8rem;

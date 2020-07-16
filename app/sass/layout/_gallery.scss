@@ -22,6 +22,11 @@
     width: 48.1rem;
     height: 47.7rem;
     object-fit: cover;
+
+    @media screen and (max-width: 63.125em){
+      width: 42.1rem;
+      height: 41.7rem;
+    }
   }
 }
 
@@ -49,7 +54,59 @@
 
   .tabs {
     max-width: 170rem;
-    padding: 3.5rem 2rem 10.5rem 2rem;
+    padding: 1.5rem 2rem 10.5rem 2rem;
     margin: 0 auto;
   }
+}
+
+.fancybox-content {
+  border: 2.2rem solid $color-pink-light;
+  max-width: 128.8rem;
+}
+
+.gallery-controls {
+  position: absolute;
+  bottom: 5rem;
+  width: 100%;
+  max-width: 128.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 999999;
+}
+
+.fancybox-navigation {
+  justify-content: space-between;
+  display: flex;
+}
+
+.fancybox-infobar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Poiret One", sans-serif;
+  color: $color-black;
+  font-size: 3.333333rem;
+
+  @include alignment-vertical;
+
+  svg {
+    padding: 0 1rem;
+  }
+}
+
+.fancybox-toolbar {
+  top: 5rem;
+  position: absolute;
+  width: 100%;
+  max-width: 128.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fancybox-bg {
+  background: none;
 }
