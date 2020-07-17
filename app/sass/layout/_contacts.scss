@@ -28,6 +28,10 @@
     @media screen and (max-width: 85em){
       padding-left: 2rem;
     }
+
+    @media screen and (max-width: 60.3125em){
+      margin-right: 2rem;
+    }
   }
 
   &__bottom {
@@ -74,6 +78,25 @@
 .company-info__location,
 .company-info__map {
   width: 50%;
+}
+
+.contact-wrapper,
+.work-schedule {
+  @media screen and (max-width: 60.3125em){
+    width: auto;
+  }
+}
+
+.work-schedule {
+  @media screen and (max-width: 60.3125em){
+    flex: 1;
+  }
+}
+
+.contact-wrapper {
+  @media screen and (max-width: 60.3125em){
+    
+  }
 }
 
 .work-schedule {

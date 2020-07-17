@@ -12,13 +12,13 @@ nav.navigation.row
             <path d="M114.256 21.0985C115.402 21.1681 116.238 21.7045 116.172 22.6739C116.099 23.7638 115.205 24.5226 113.954 24.56C112.639 24.5973 112.1 23.6466 112.145 22.6926C112.196 21.6349 113.075 21.0832 114.256 21.0985Z" fill="#2A973A"/>
             </svg>
         ul.nav-list.row
-            li.nav-list__item.nav-list__item--active
+            li(data-nav-index=1).nav-list__item.nav-list__item--active
                 a(href='#')='Головна'
-            li.nav-list__item
+            li(data-nav-index=2).nav-list__item
                 a(href='#')='Меню'
-            li.nav-list__item
+            li(data-nav-index=3).nav-list__item
                 a(href='#')='Галерея'
-            li.nav-list__item
+            li(data-nav-index=4).nav-list__item
                 a(href='#')='Контакти'
         a(href='#').basket.basket--active
             span='Корзина'

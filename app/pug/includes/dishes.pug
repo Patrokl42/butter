@@ -59,7 +59,7 @@
         if (index === 0)
             .dishes-inner.dishes-inner--active(data-item-type=type.name)
                 .dishes.dishes--active.row
-                    each item in dishes
+                    each item, id in dishes
                         .dishes__item
                             .dishes__image
                                 img(src=item.image)
@@ -74,7 +74,7 @@
                                             span=item.portion
                                             span='грам'
                                     p.paragraph.dishes__discription=item.discription
-                                    .quantity
+                                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                                         button(type='button').btn.btn--red='Додати до кошика'
                                         .quantity__inner
                                             span='Кількість:'
@@ -102,7 +102,7 @@
                                             span=item.portion
                                             span='грам'
                                     p.paragraph.dishes__discription=item.discription
-                                    .quantity
+                                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                                         button(type='button').btn.btn--red='Додати до кошика'
                                         .quantity__inner
                                             span='Кількість:'
@@ -150,7 +150,7 @@
                                             span=item.portion
                                             span='грам'
                                     p.paragraph.dishes__discription=item.discription
-                                    .quantity
+                                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                                         button(type='button').btn.btn--red='Додати до кошика'
                                         .quantity__inner
                                             span='Кількість:'
@@ -178,7 +178,7 @@
                                             span=item.portion
                                             span='грам'
                                     p.paragraph.dishes__discription=item.discription
-                                    .quantity
+                                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                                         button(type='button').btn.btn--red='Додати до кошика'
                                         .quantity__inner
                                             span='Кількість:'

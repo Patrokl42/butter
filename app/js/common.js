@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
+  const orderBasket = [];
+  basket(orderBasket);
+
   slider('.gallery-container');
 
   testymonialsSlider('.testimonials-slider');
@@ -34,6 +37,35 @@ document.addEventListener("DOMContentLoaded", function() {
     );
   })
 });
+
+function basket(orderBasket) {
+  dishesArray = document.querySelectorAll('.dishes__item');
+  
+  dishesArray.forEach(item => {
+    item.querySelector('.quantity > button').addEventListener('click', () => {
+      orderBasket = addDishes(item.querySelector('.quantity'), orderBasket, item.querySelector('.quantity .quantity__info span'));
+    });
+  });
+}
+
+function addDishes(controlsTag, orderBasket, dishesNumberTag) {
+  const dishesId = controlsTag.dataset.dishesId * 1;
+  const dishesIsExist = orderBasket.find(dishes => dishesId === dishes.id);
+  const dushesNumber = dishesNumberTag.innerHTML * 1;
+  dishesNumberTag.innerHTML = 1;
+
+  if (!dishesIsExist) {
+    return [...orderBasket,
+      {id: dishesId, number: dushesNumber}
+    ];
+  } else {
+    return orderBasket.map(
+      dishes => dishesId === dishes.id
+        ? { ...dishes, number: dishes.number + dushesNumber }
+        : dishes,
+    );
+  }
+}
 
 function quantity(_quantity) {
   const quantity = document.querySelectorAll(_quantity);
@@ -157,7 +189,6 @@ function slider(sliderClass) {
   var mySwiper = new Swiper(sliderClass , {
     slidesPerView: 4,
     spaceBetween: 0,
-    loop: true,
     observer: true,
     observeParents: true,
 
@@ -167,7 +198,7 @@ function slider(sliderClass) {
     },
 
     breakpoints: {
-      900: {
+      700: {
         slidesPerView: 3,
       },
       1100: {
@@ -195,18 +226,13 @@ function testymonialsSlider(sliderClass) {
 
       1250: {
         spaceBetween: 71
-      },
-
-      // 1085: {
-      //   slidesPerView: 2,
-      // },
+      }
     }
   })
 };
 
 function gallery() {
   $('[data-fancybox]').fancybox({
-    // Options will go here
     buttons : [
       'close'
     ],
@@ -227,7 +253,6 @@ function gallery() {
           '<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M1 1L14 14" stroke="black"/> <path d="M1 14L14 0.999999" stroke="black"/> </svg>' +
           "</button>",
 
-      // Arrows
       arrowLeft:
           '<button data-fancybox-prev class=" btn btn--icon btn--green" title="{{PREV}}">' +
           '<svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M9 17L0.999999 9L9 1" stroke="#333333"/> </svg>' +
@@ -239,7 +264,6 @@ function gallery() {
           "</button>",
     },
 
-    // Base template for layout
     baseTpl:
         '<div class="fancybox-container" role="dialog" tabindex="-1">' +
         '<div class="fancybox-bg"></div>' +
@@ -265,7 +289,9 @@ function removeBlur(classList) {
 
 function stickyNavbar() {
   const navbar = document.querySelector(".navigation");
-  const sticky = navbar.offsetTop;
+  const sticky = navbar.offsetHeight;
+  const sections = document.querySelectorAll("#section");
+  const navItems = document.querySelectorAll(".nav-list__item");
 
   window.onscroll = function() {
 
@@ -274,5 +300,27 @@ function stickyNavbar() {
     } else {
       navbar.classList.remove("navigation--sticky");
     }
+
+    sections.forEach((item) => {
+      if (window.pageYOffset > item.offsetTop - 95) {
+        removeClassFromQuery(document.querySelectorAll('.nav-list .nav-list__item'), 'nav-list__item--active');
+
+        document.querySelector(".nav-list")
+          .querySelector(`[data-nav-index="${item.dataset.navIndex}"]`)
+          .classList
+          .add('nav-list__item--active');
+      } else {
+        document.querySelector(".nav-list")
+          .querySelector(`[data-nav-index="${item.dataset.navIndex}"]`)
+          .classList
+          .remove('nav-list__item--active');
+      }
+    });
   };
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      console.log(document.querySelector(`body > [data-nav-index="${item.dataset.navIndex}"]`));
+    });
+  });
 }

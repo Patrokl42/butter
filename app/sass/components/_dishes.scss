@@ -8,13 +8,12 @@ body .dishes {
 
   &__item {
     display: flex;
-    @include col-1-of-2($dishes-gutter-horizontal, $dishes-gutter-vertical);
 
-    //@media screen and (max-width: 88.75em){
-    //  width: calc((100% / 2) - (4rem / 2));
-    //  margin-right: 4rem;
-    //  margin-bottom: 3.6rem;
-    //}
+    @media screen and (max-width: 57.1875em){
+      align-items: flex-start;
+    }
+    
+    @include col-1-of-2($dishes-gutter-horizontal, $dishes-gutter-vertical);
   }
 
   &__image {
@@ -81,6 +80,11 @@ body .dishes {
       @media screen and (max-width: 79.375em){
         display: none;
       }
+    }
+
+    @media screen and (max-width: 57.1875em){
+      display: flex;
+      flex-direction: column-reverse;
     }
   }
 }
