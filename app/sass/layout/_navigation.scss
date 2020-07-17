@@ -5,6 +5,9 @@
     background-color: $color-pink-light;
     border-top: 2.5rem solid $color-white;
     z-index: 3;
+    position: fixed;
+    top: 0;
+    width: 100%;
 
     transition: all .3s ease;
 
@@ -21,9 +24,6 @@
     }
 
     &--sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
         background-color: $color-white;
         border-top: none;
         padding: 2.1rem 2rem 1.9rem 2rem;
@@ -60,6 +60,8 @@
         padding: 1rem;
         margin-right: 7.6rem;
         transition: background-color .3s ease;
+
+        cursor: pointer;
 
         &:last-child {
             margin-right: 0;

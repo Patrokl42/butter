@@ -198,6 +198,9 @@ function slider(sliderClass) {
     },
 
     breakpoints: {
+      300: {
+        slidesPerView: 2
+      },
       700: {
         slidesPerView: 3,
       },
@@ -295,32 +298,45 @@ function stickyNavbar() {
 
   window.onscroll = function() {
 
-    if (window.pageYOffset >= 20) {
-      navbar.classList.add("navigation--sticky")
-    } else {
-      navbar.classList.remove("navigation--sticky");
-    }
-
     sections.forEach((item) => {
       if (window.pageYOffset > item.offsetTop - 95) {
         removeClassFromQuery(document.querySelectorAll('.nav-list .nav-list__item'), 'nav-list__item--active');
 
         document.querySelector(".nav-list")
-          .querySelector(`[data-nav-index="${item.dataset.navIndex}"]`)
+          .querySelector(`[data-nav-index="${item.dataset.sectionIndex}"]`)
           .classList
           .add('nav-list__item--active');
       } else {
         document.querySelector(".nav-list")
-          .querySelector(`[data-nav-index="${item.dataset.navIndex}"]`)
+          .querySelector(`[data-nav-index="${item.dataset.sectionIndex}"]`)
           .classList
           .remove('nav-list__item--active');
       }
     });
+
+    if (window.pageYOffset >= 20) {
+      navbar.classList.add("navigation--sticky")
+    } else {
+      navbar.classList.remove("navigation--sticky");
+      document
+        .querySelectorAll('.nav-list .nav-list__item')[0]
+        .classList
+        .add('nav-list__item--active');
+    }
   };
+  
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      console.log(document.querySelector(`body > [data-nav-index="${item.dataset.navIndex}"]`));
+      console.log(document
+        .querySelector(`[data-section-index="${item.dataset.navIndex}"]`)
+        .getBoundingClientRect().top + window.pageYOffset - 70);
+      window.scrollTo({
+        top: document
+              .querySelector(`[data-section-index="${item.dataset.navIndex}"]`)
+              .getBoundingClientRect().top + window.pageYOffset - 70,
+        behavior: 'smooth'
+      });
     });
   });
 }
