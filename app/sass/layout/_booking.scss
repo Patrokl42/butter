@@ -2,6 +2,10 @@
   background-color: $color-pink-light;
   padding: 8.7rem 0 4.2rem 2rem;
 
+  @media screen and (max-width: 31.25em){
+    padding: 3.75rem 0 5.5rem 2.75rem;
+  }
+
   &__inner {
     margin: auto;
     max-width: 135.2rem;
@@ -16,5 +20,14 @@
 
   > * {
     margin-top: 2rem;
+
+    @media screen and (max-width: 31.25em){
+      margin: 0 auto 2.375rem 0;
+    }
+  }
+
+  @media screen and (max-width: 31.25em){
+    margin-top: 4.375rem;
+    flex-direction: column;
   }
 }

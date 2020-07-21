@@ -10,6 +10,12 @@
   outline: none;
   white-space: nowrap;
 
+  @media screen and (max-width: 46.875em){
+    font-size: 2.25rem;
+    padding: 1.25rem 2.5rem;
+    height: 5.25rem;
+  }
+
   &--pink {
     background-color: $color-pink-dark;
   }
@@ -21,7 +27,7 @@
   &--red {
     background-color: $color-red-light;
     color: $color-white;
-    font-weight: normal;
+    font-weight: 600;
   }
 
   &--icon {
@@ -39,6 +45,10 @@
   &--with-icon {
     span {
       padding-right: 1.8rem;
+    }
+
+    @media screen and (max-width: 38.125em){
+      margin: auto;
     }
   }
 }

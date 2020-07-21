@@ -14,6 +14,10 @@ body {
 .box-title {
     font-size: 3.3rem;
     line-height: 3.9rem;
+
+    @media screen and (max-width: 31.25em){
+        font-size: 4.125rem;
+    }
 }
 
 .paragraph {
@@ -22,15 +26,32 @@ body {
     font-weight: 300;
     color: $color-primary-dark;
     line-height: 2.4rem;
+
+    @media screen and (max-width: 46.875em){
+        font-size: 2.375rem;
+        line-height: 2.875rem;
+    }
 }
 
 .site-title {
     font-size: 6rem;
     font-weight: normal;
+
+    @media screen and (max-width: 46.875em){
+        font-size: 6.5885375rem;
+        max-width: 31.625rem;
+        margin-left: auto;
+        line-height: 6.375rem;
+        margin-bottom: 3.875rem;
+    }
 }
 
 ::placeholder {
     color: $color-black;
     font-size: 2rem;
     font-family: "Poiret One", sans-serif;
+
+    @media screen and (max-width: 31.25em){
+        font-size: 2.5rem;
+    }
 }

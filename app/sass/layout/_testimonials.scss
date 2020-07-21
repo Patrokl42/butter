@@ -7,6 +7,10 @@
   @media screen and (max-width: 106.25em){
     padding: 0 6rem;
   }
+
+  @media screen and (max-width: 53.125em){
+    padding: 0 9rem;
+  }
 }
 
 .testimonial-button-prev, .testimonial-button-next {
@@ -22,6 +26,10 @@
   @media screen and (max-width: 106.25em){
     left: 1rem;
   }
+
+  @media screen and (max-width: 53.125em){
+    left: 2rem;
+  }
 }
 
 .testimonial-button-next {
@@ -29,5 +37,9 @@
 
   @media screen and (max-width: 106.25em){
     right: 1rem;
+  }
+
+  @media screen and (max-width: 53.125em){
+    right: 2rem;
   }
 }

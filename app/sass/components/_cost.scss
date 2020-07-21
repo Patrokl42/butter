@@ -18,6 +18,10 @@
       text-decoration: line-through;
       margin-right: 1.3rem;
     }
+
+    @media screen and (max-width: 46.875em){
+      font-size: 3.625rem;
+    }
   }
 
   &__portion {
@@ -32,6 +36,10 @@
       background-color: $color-primary-dark;
       width: 1px;
       height: 2.5rem;
+    }
+
+    @media screen and (max-width: 46.875em){
+      font-size: 2.5rem;
     }
   }
 

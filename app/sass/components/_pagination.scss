@@ -4,10 +4,21 @@
   display: flex;
   color: $color-black;
 
+  @media screen and (max-width: 38.125em){
+    flex-direction: column;
+  }
+
   &__inner {
     margin-right: 7rem;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 38.125em){
+      width: 100%;
+      margin-right: 0;
+      justify-content: space-between;
+      margin-bottom: 6.25rem;
+    }
   }
 
   &__curent-position {
@@ -37,5 +48,9 @@
   &__info {
     font-size: 3.33rem;
     line-height: 3.9rem;
+
+    @media screen and (max-width: 38.125em){
+      font-size: 4.1666625rem;
+    }
   }
 }

@@ -3,7 +3,6 @@
   justify-content: space-between;
   @include reset-list();
 
-  //padding: 3.5rem 11rem 10.5rem 11rem;
   flex-wrap: wrap;
   margin: auto;
 
@@ -23,5 +22,9 @@
       border-bottom: 2px solid rgba(51, 51, 51, 0.5);
       padding-bottom: 1.5rem;
     }
+  }
+
+  &__prev, &__next {
+    display: none;
   }
 }

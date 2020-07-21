@@ -4,6 +4,15 @@
   margin-bottom: 3.5rem;
 }
 
+.hide {
+  display: none;
+}
+
+.hide-opacity {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .blured {
   filter: blur(7px);
 }

@@ -6,10 +6,25 @@
   @media screen and (max-width: 93.125em){
     margin: 14.6rem auto auto 2rem;
   }
+
+  @media screen and (max-width: 46.875em){
+    margin: 4.125rem 0 0 0;
+    padding-right: 0;
+  }
 }
 
 .dashboard-container {
   display: flex;
+
+  @media screen and (max-width: 46.875em){
+    flex-direction: column;
+  }
+
+  &:last-child {
+    @media screen and (max-width: 46.875em){
+      margin-top: 37.5rem;
+    }
+  }
 
   &:not(:last-child) {
     margin-bottom: 4.3rem;
@@ -22,6 +37,11 @@
   position: relative;
   width: 4%;
 
+  @media screen and (max-width: 46.875em){
+    width: 100%;
+    padding-left: 4.125rem;
+  }
+
   span {
     position: relative;
     white-space: nowrap;
@@ -29,5 +49,11 @@
     transform: rotate(180deg);
     text-align: right;
     line-height: 2rem;
+
+    @media screen and (max-width: 46.875em){
+      transform: none;
+      writing-mode: horizontal-tb;
+      text-align: left;
+    }
   }
 }

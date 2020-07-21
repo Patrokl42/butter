@@ -11,6 +11,14 @@
 
     transition: all .3s ease;
 
+    @media screen and (max-width: 50.625em){
+        display: flex;
+        border-top: 1rem solid $color-white;
+        padding: 3.125rem 4.375rem 3.17125rem 3.75rem;
+
+        font-size: 2.625rem;
+    }
+
     &__inner {
         max-width: 169rem;
         margin: auto;
@@ -21,6 +29,10 @@
 
     &__logo {
         display: none;
+
+        @media screen and (max-width: 50.625em){
+            display: flex;
+        }
     }
 
     &--sticky {
@@ -32,23 +44,46 @@
 
         z-index: 3;
 
+        @media screen and (max-width: 50.625em){
+            padding: 3.125rem 4.375rem 3.17125rem 3.75rem;
+        }
+
         .navigation__inner {
             max-width: 170rem;
+            position: relative;
         }
 
         .navigation__logo {
             @include alignment-vertical;
         }
 
-        .nav-list__item {
-
-            &:hover {
-                background-color: $color-pink-light;
+        .nav-list {
+            @media screen and (max-width: 50.625em){
+                background-color: $color-white;
             }
 
-            &--active {
-                background-color: $color-pink-light;
+            &__item {
+                &:hover {
+                    background-color: $color-pink-light;
+                }
+
+                &--active {
+                    background-color: $color-pink-light;
+                }
             }
+        }
+    }
+}
+
+.basket {
+    @include alignment-vertical;
+    @include reset-links;
+
+    span {
+        margin-right: 1rem;
+
+        @media screen and (max-width: 50.625em){
+            display: none;
         }
     }
 }
@@ -65,6 +100,11 @@
 
         &:last-child {
             margin-right: 0;
+
+            @media screen and (max-width: 50.625em){
+                margin: auto;
+                margin-bottom: 2.625rem;
+            }
         }
 
         &:hover {
@@ -78,14 +118,71 @@
         &--active {
             background-color: $color-white;
         }
+
+        &--basket {
+            display: none;
+
+            @media screen and (max-width: 50.625em){
+                display: block;
+            }
+
+            span {
+                @media screen and (max-width: 50.625em){
+                    display: block;
+                }
+            }
+        }
+
+        @media screen and (max-width: 50.625em){
+            width: max-content;
+            margin: auto;
+            padding: 1.25rem;
+            margin-bottom: 3rem;
+        }
+    }
+
+    @media screen and (max-width: 50.625em){
+        display: none;
+        position: absolute;
+
+        flex-direction: column;
+        left: 0;
+        transform: translateY(100%);
+        background-color: $color-pink-light;
+        width: 100%;
+        padding-top: 7.625rem;
+    }
+
+    &--open {
+        display: flex;
+        bottom: 0;
+
+        animation: moveInBottom .7s ease;
     }
 }
 
-.basket {
-    @include alignment-vertical;
-    @include reset-links;
+.burger-icon {
+    display: none;
+    cursor: pointer;
 
-    span {
-        margin-right: 1rem;
+    & svg path {
+        transition: 0.4s all ease-in;
+    }
+
+    @media screen and (max-width: 50.625em){
+        display: flex;
+        @include alignment-vertical;
+    }
+
+    &--active {
+        svg {
+            path:nth-child(1),
+            path:nth-child(3),
+            path:nth-child(5),
+            path:nth-child(8),
+            {
+                opacity: 0.2;
+            }
+        }
     }
 }
