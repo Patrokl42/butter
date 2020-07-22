@@ -35,6 +35,11 @@
     width: 4.2rem;
     @include alignment-vertical();
     padding: 1rem;
+
+    @media screen and (max-width: 46.875em){
+      height: 5.25rem;
+      width: 5.25rem;
+    }
   }
 
   &__icon {

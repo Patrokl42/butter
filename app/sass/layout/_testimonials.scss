@@ -11,6 +11,11 @@
   @media screen and (max-width: 53.125em){
     padding: 0 9rem;
   }
+
+  @media screen and (max-width: 37.5em){
+    padding: 0 0 0 2rem;
+    margin: 13.75rem 0 0 0;
+  }
 }
 
 .testimonial-button-prev, .testimonial-button-next {
@@ -18,6 +23,11 @@
   top: 50%;
   z-index: 2;
   transform: translateY(-50%);
+
+  @media screen and (max-width: 37.5em) {
+    top: 15rem;
+    transform: none;
+  }
 }
 
 .testimonial-button-prev {
@@ -30,6 +40,10 @@
   @media screen and (max-width: 53.125em){
     left: 2rem;
   }
+
+  @media screen and (max-width: 37.5em) {
+    left: 0;
+  }
 }
 
 .testimonial-button-next {
@@ -41,5 +55,9 @@
 
   @media screen and (max-width: 53.125em){
     right: 2rem;
+  }
+
+  @media screen and (max-width: 37.5em) {
+    right: 0;
   }
 }

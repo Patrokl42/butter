@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+window.addEventListener("load", function() {
   const orderBasket = [];
   basket(orderBasket);
 
@@ -36,7 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
         '.pagination__last-position',
         'dishes--active'
     );
-  })
+  });
+
+  // tabs('.tabs-menu',
+  //     '.tabs-wrapper .tabs-prev-btn',
+  //     '.tabs-wrapper .tabs-prev-btn',
+  //     '.tabs-wrapper .tabs__item'
+  // );
 });
 
 function basket(orderBasket) {
@@ -225,7 +231,8 @@ function testymonialsSlider(sliderClass) {
 
     breakpoints: {
       300: {
-        slidesPerView: 1
+        slidesPerView: 'auto',
+        spaceBetween: 0
       },
 
       850: {
@@ -282,6 +289,42 @@ function gallery() {
         '</div>' +
         '</div>',
   });
+}
+
+function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
+  const tabsWrapper = document.querySelector(tabsClass);
+  const prevBtn = document.querySelector(_prevBtn);
+  const nextBtn = document.querySelector(_nextBtn);
+  const tabsList = document.querySelectorAll(_tabsList);
+  const tabsWith = getItemsWidth(tabsList, 36);
+  let width = 0;
+
+  tabsWrapper.style.width = tabsWith.widthSum + 'px';
+
+
+  // tabsList.forEach((item, index) => {
+  //   width += tabsWith.widthArray[index];
+  //   item.style.left = width + 'px';
+  // });
+
+  console.log(tabsWith.widthSum);
+  console.log(tabsWith.widthArray);
+
+};
+
+function getItemsWidth(tabs, spaceBetween) {
+  let widthSum = 0;
+  const widthArray = [];
+
+  tabs.forEach(item => {
+    widthSum += item.offsetWidth + spaceBetween;
+    widthArray.push(item.offsetWidth + spaceBetween);
+  });
+
+  return {
+    widthSum: widthSum,
+    widthArray: widthArray,
+  }
 }
 
 function setBlur(classList) {
@@ -348,11 +391,12 @@ function burgerMenu() {
   const burger = document.querySelector(".burger-icon");
   const navigationList = document.querySelector(".nav-list");
   const basket = document.querySelector(".navigation__inner > .basket");
-  console.log(basket);
+  const body = document.querySelector("body");
 
   burger.addEventListener('click', () => {
     burger.classList.toggle("burger-icon--active");
     navigationList.classList.toggle("nav-list--open");
     basket.classList.toggle("hide-opacity");
+    body.classList.toggle('scroll-off');
   });
 }

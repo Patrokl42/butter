@@ -9,9 +9,18 @@
     margin: 0;
   }
 
+  @media screen and (max-width: 47.1875em){
+    padding-left: 0;
+  }
+
   &__title {
     display: inline-block;
     padding-bottom: 4.8rem;
+
+    @media screen and (max-width: 47.1875em){
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__inner {
@@ -29,8 +38,12 @@
       padding-left: 2rem;
     }
 
-    @media screen and (max-width: 60.3125em){
-      margin-right: 2rem;
+    @media screen and (max-width: 47.1875em){
+      padding: 0;
+    }
+
+    @media screen and (max-width: 60.3125em) {
+      padding-right: 2rem;
     }
   }
 
@@ -42,11 +55,23 @@
     @media screen and (max-width: 85em){
       padding-left: 2rem;
     }
+
+    @media screen and (max-width: 47.1875em){
+      flex-direction: column;
+      height: 100%;
+      padding-left: 0;
+    }
   }
 
-  &__map iframe {
-    width: 100%;
-    height: 100%;
+  &__map{
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (max-width: 47.1875em){
+      height: 30rem;
+    }
   }
 
   &__location {
@@ -54,10 +79,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 47.1875em){
+      padding: 1.875rem 0 1.875rem 2.5rem;
+    }
   }
 
   &__city {
     font-size: 3.3rem;
+
+    @media screen and (max-width: 47.1875em){
+      font-size: 2.5rem;
+    }
   }
 
   &__street {
@@ -66,24 +99,14 @@
     @media screen and (max-width: 85em){
       font-size: 4.17rem;
     }
+
+    @media screen and (max-width: 47.1875em){
+      font-size: 4.125rem;
+    }
   }
 
   &__city, &__street {
     display: block;
-  }
-}
-
-.contact-wrapper,
-.work-schedule,
-.company-info__location,
-.company-info__map {
-  width: 50%;
-}
-
-.contact-wrapper,
-.work-schedule {
-  @media screen and (max-width: 60.3125em){
-    width: auto;
   }
 }
 
@@ -94,8 +117,9 @@
 }
 
 .contact-wrapper {
-  @media screen and (max-width: 60.3125em){
-    
+
+  @media screen and (max-width: 47.1875em){
+    margin-right: 0;
   }
 }
 
@@ -107,6 +131,11 @@
     justify-content: space-between;
     max-width: 27.1rem;
     color: $color-black;
+
+    @media screen and (max-width: 47.1875em){
+      margin: auto;
+      max-width: 38.1rem;
+    }
   }
 }
 
@@ -122,6 +151,11 @@
 .contact-inner {
   max-width: 55.2rem;
   width: 100%;
+
+  @media screen and (max-width: 47.1875em){
+    margin: auto;
+    max-width: 56.2rem;
+  }
 }
 
 .contact-form {
@@ -147,5 +181,29 @@
 .contact-wrapper {
   .company-info__title {
     padding-bottom: 1rem;
+  }
+}
+
+.contact-wrapper,
+.work-schedule,
+.company-info__location,
+.company-info__map {
+  width: 50%;
+
+  @media screen and (max-width: 47.1875em){
+    width: 100%;
+  }
+}
+
+.contact-wrapper,
+.work-schedule {
+  @media screen and (max-width: 60.3125em){
+    width: auto;
+  }
+
+  @media screen and (max-width: 47.1875em){
+    margin-bottom: 4.5rem;
+    font-size: 2.5rem;
+    width: 100%;
   }
 }
