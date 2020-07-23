@@ -22,6 +22,10 @@
     justify-content: space-around;
   }
 
+  @media screen and (max-width: 33.75em){
+    justify-content: center;
+  }
+
   &__item {
     max-height: 31.1rem;
     max-width: 32.7rem;
@@ -56,6 +60,7 @@
       max-width: 19.25rem;
       max-height: 18.375rem;
       border-width: 0.75rem;
+      margin-right: 1.125rem;
     }
 
     &:last-child {
@@ -113,10 +118,13 @@
     }
   }
 
-
   @media screen and (max-width: 46.875em){
     margin: 0 3rem 18.5325rem 0;
     max-width: none;
+  }
+
+  @media screen and (max-width: 38.125em){
+    padding-left: 7.5rem;
   }
 
   @media screen and (max-width: 33.75em){

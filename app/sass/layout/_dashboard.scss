@@ -24,6 +24,10 @@
     @media screen and (max-width: 46.875em){
       margin-top: 37.5rem;
     }
+
+    @media screen and (max-width: 31.25em){
+      margin-top: 36.625rem;
+    }
   }
 
   &:not(:last-child) {
@@ -40,6 +44,12 @@
   @media screen and (max-width: 46.875em){
     width: 100%;
     padding-left: 4.125rem;
+  }
+
+  @media screen and (max-width: 31.25em){
+    font-size: 4.125rem;
+    padding-left: 2.5rem;
+    padding-bottom: 3rem;
   }
 
   span {

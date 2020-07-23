@@ -9,6 +9,10 @@ body {
     font-size: 5.1rem;
     text-align: center;
     font-weight: normal;
+
+    @media screen and (max-width: 38.125em){
+        margin-bottom: 5.75rem;
+    }
 }
 
 .box-title {

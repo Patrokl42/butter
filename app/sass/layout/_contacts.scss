@@ -20,6 +20,11 @@
     @media screen and (max-width: 47.1875em){
       width: 100%;
       text-align: center;
+      padding-bottom: 5.75rem;
+    }
+
+    @media screen and (max-width: 31.25em) {
+      text-align: left;
     }
   }
 
@@ -38,12 +43,12 @@
       padding-left: 2rem;
     }
 
-    @media screen and (max-width: 47.1875em){
-      padding: 0;
-    }
-
     @media screen and (max-width: 60.3125em) {
       padding-right: 2rem;
+    }
+
+    @media screen and (max-width: 47.1875em){
+      padding: 0;
     }
   }
 
@@ -71,6 +76,10 @@
 
     @media screen and (max-width: 47.1875em){
       height: 30rem;
+    }
+
+    @media screen and (max-width: 31.25em){
+      height: 21.875rem;
     }
   }
 
@@ -114,12 +123,20 @@
   @media screen and (max-width: 60.3125em){
     flex: 1;
   }
+
+  @media screen and (max-width: 31.25em) {
+    max-width: 36.5rem;
+    margin: auto;
+  }
 }
 
 .contact-wrapper {
-
   @media screen and (max-width: 47.1875em){
     margin-right: 0;
+  }
+
+  @media screen and (max-width: 32.5em){
+    margin: 0 2.5rem 0 2.5rem;
   }
 }
 
@@ -142,6 +159,10 @@
 .contacts {
   @include reset-list;
   color: $color-black;
+
+  @media screen and (max-width: 32.5em){
+    margin-left: 3.875rem;
+  }
 
   &__item a {
     @include reset-links;
@@ -182,6 +203,12 @@
   .company-info__title {
     padding-bottom: 1rem;
   }
+
+  .company-info__title {
+    @media screen and (max-width: 32.5em){
+      margin-left: 3.875rem;
+    }
+  }
 }
 
 .contact-wrapper,
@@ -202,8 +229,8 @@
   }
 
   @media screen and (max-width: 47.1875em){
-    margin-bottom: 4.5rem;
     font-size: 2.5rem;
     width: 100%;
+    margin: auto auto 4.5rem auto;
   }
 }
