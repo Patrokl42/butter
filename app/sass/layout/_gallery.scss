@@ -1,5 +1,9 @@
 .gallery {
   box-shadow: 0px 4px 90px rgba(0, 0, 0, 0.09);
+
+  @media screen and (max-width: 41.25em){
+    padding-top: 7.5rem;
+  }
 }
 
 .gallery-container {
@@ -26,6 +30,16 @@
     @media screen and (max-width: 63.125em){
       width: 42.1rem;
       height: 41.7rem;
+    }
+
+    @media screen and (max-width: 35.625em){
+      width: 34.625rem;
+      height: 31.375rem;
+    }
+
+    @media screen and (max-width: 23.5625em){
+      width: 23.625rem;
+      height: 23.375rem;
     }
   }
 }
@@ -56,6 +70,10 @@
     max-width: 170rem;
     padding: 1.5rem 2rem 10.5rem 2rem;
     margin: 0 auto;
+
+    @media screen and (max-width: 41.25em){
+      padding: 0;
+    }
   }
 }
 
@@ -109,4 +127,8 @@
 
 .fancybox-bg {
   background: none;
+}
+
+.gallery-container .gallery-wrapper {
+  flex-direction: row;
 }

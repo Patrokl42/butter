@@ -9,7 +9,8 @@
   }
 
   @media screen and (max-width: 38.125em){
-    padding: 4.445rem 0 6.25rem 0;
+    padding: 0;
+    margin-bottom: 6.25rem;
   }
 
   .tabs {
@@ -18,7 +19,11 @@
     padding: 0 2rem 9.4rem 2rem;
 
     @media screen and (max-width: 46.875em){
-      padding: 0 0 5rem 0;
+      padding: 0 2rem 5rem 2rem;
+    }
+
+    @media screen and (max-width: 41.25em){
+      padding: 0;
     }
   }
 }

@@ -1,4 +1,18 @@
 window.addEventListener("load", function() {
+  if (window.matchMedia("(max-width: 660px)").matches) {
+    tabs('.tabs-menu',
+        '.tabs-menu-wrapper .tabs-prev-btn',
+        '.tabs-menu-wrapper .tabs-next-btn',
+        '.tabs-menu-wrapper .tabs__item'
+    );
+
+    tabs('.tabs-gallery',
+        '.tabs-gallery-wrapper .tabs-prev-btn',
+        '.tabs-gallery-wrapper .tabs-next-btn',
+        '.tabs-gallery-wrapper .tabs__item'
+    );
+  }
+
   const orderBasket = [];
   basket(orderBasket);
 
@@ -37,12 +51,6 @@ window.addEventListener("load", function() {
         'dishes--active'
     );
   });
-
-  // tabs('.tabs-menu',
-  //     '.tabs-wrapper .tabs-prev-btn',
-  //     '.tabs-wrapper .tabs-prev-btn',
-  //     '.tabs-wrapper .tabs__item'
-  // );
 });
 
 function basket(orderBasket) {
@@ -206,11 +214,18 @@ function slider(sliderClass) {
 
     breakpoints: {
       300: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+      },
+
+      570: {
         slidesPerView: 2
       },
+
       700: {
         slidesPerView: 3,
       },
+
       1100: {
         slidesPerView: 4,
       },
@@ -297,19 +312,31 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
   const nextBtn = document.querySelector(_nextBtn);
   const tabsList = document.querySelectorAll(_tabsList);
   const tabsWith = getItemsWidth(tabsList, 36);
-  let width = 0;
+  let distance = 0;
+  let currentPosition = 0;
 
-  tabsWrapper.style.width = tabsWith.widthSum + 'px';
+  tabsWrapper.style.width = tabsWith.widthSum + 100 + 'px';
 
+  nextBtn.addEventListener('click', () => {
+    if (tabsList.length -1 > currentPosition) {
+      distance = tabsWith.widthArray
+          .slice(0, currentPosition + 1)
+          .reduce((prevItem, nextItem) => prevItem + nextItem, 0);
 
-  // tabsList.forEach((item, index) => {
-  //   width += tabsWith.widthArray[index];
-  //   item.style.left = width + 'px';
-  // });
+      console.log(distance, 'all with');
+      tabsWrapper.style.left = -distance + 25 + 'px';
+      currentPosition++;
+    }
+  });
 
-  console.log(tabsWith.widthSum);
-  console.log(tabsWith.widthArray);
-
+  prevBtn.addEventListener('click', () => {
+    if (currentPosition > 0) {
+      distance -= tabsWith.widthArray[currentPosition -1];
+      console.log(distance, 'all with');
+      currentPosition === 1 ? tabsWrapper.style.left = 20 + 'px' : tabsWrapper.style.left = -distance - 40 + 'px';
+      currentPosition--;
+    }
+  });
 };
 
 function getItemsWidth(tabs, spaceBetween) {
