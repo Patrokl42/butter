@@ -2,7 +2,7 @@
     justify-content: space-between;
     padding: 2.5rem 2rem 7rem 2rem;
     font-size: 2.1rem;
-    background-color: $color-pink-light;
+    background-color: $color-pink;
     border-top: 2.5rem solid $color-white;
     z-index: 3;
     position: fixed;
@@ -45,7 +45,7 @@
 
         @media screen and (max-width: 50.625em){
             padding: 3.125rem 4.375rem 3.17125rem 3.75rem;
-            background-color: $color-pink-light;
+            background-color: $color-pink;
         }
 
         .navigation__inner {
@@ -64,7 +64,7 @@
 
             &__item {
                 &:hover {
-                    background-color: $color-pink-light;
+                    background-color: $color-pink;
 
                     @media screen and (max-width: 50.625em){
                         background-color: $color-white;
@@ -72,7 +72,7 @@
                 }
 
                 &--active {
-                    background-color: $color-pink-light;
+                    background-color: $color-pink;
 
                     @media screen and (max-width: 50.625em){
                         background-color: $color-white;
@@ -156,7 +156,7 @@
         flex-direction: column;
         left: 0;
         transform: translateY(100%);
-        background-color: $color-pink-light;
+        background-color: $color-pink;
         width: 100%;
         padding-top: 7.625rem;
     }

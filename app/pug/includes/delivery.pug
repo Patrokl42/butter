@@ -2,24 +2,27 @@
     form.delivery__inner
         span.delivery__title='Введіть дані для доставки'
         .row.delivery__row
-            input(placeholder="Ім’я" name='phone-number').input.input--name
+            input(placeholder="Ім’я" name='name').input.input--name
             input(placeholder="+380 -- -- -- ---" name='phone-number' data-mask="+380 00 00 00 000").input.input--phone-number
-            input(placeholder="Вулиця" name='phone-number').input.input--street
-            input(placeholder="Будинок" name='phone-number').input.input--building
-            input(placeholder="Квартира" name='phone-number').input.input--apartment
-            input(placeholder="Коментар до замовлення" name='phone-number').input.input--comment
+            input(placeholder="Вулиця" name='street').input.input--street
+            input(placeholder="Будинок" name='building').input.input--building
+            input(placeholder="Квартира" name='apartment').input.input--apartment
+            input(placeholder="Коментар до замовлення" name='comment').input.input--comment
         .row.delivery__row
-            label.container
-                input(type='radio' checked='checked' name='radio')
-                span.checkmark
-                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 8L7.5 14.5L21 1" stroke="black"/>
-                    </svg>
-
-            label.container
-                input(type='radio' name='radio')
-                span.checkmark
-                    <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 8L7.5 14.5L21 1" stroke="black"/>
-                    </svg>
+            .checkbox
+                label.checkbox-container
+                    input(type='radio' checked='checked' name='radio')
+                    span.checkmark
+                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 8L7.5 14.5L21 1" stroke="black"/>
+                        </svg>
+                span.checkbox__title='Готівка'
+            .checkbox
+                label.checkbox-container
+                    input(type='radio' name='radio')
+                    span.checkmark
+                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 8L7.5 14.5L21 1" stroke="black"/>
+                        </svg>
+                span.checkbox__title='Картою Online'
             button(type='button').btn.btn--green='ПІДТВЕРДИТИ ЗАМОВЛЕННЯ'

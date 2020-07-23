@@ -1,34 +1,118 @@
 .order-table {
   max-width: 167.7rem;
-  margin: 8.2rem auto 6.8rem auto;
+  margin: 25.4rem auto 6.8rem auto;
+
+  @media screen and (max-width: 109.375em){
+    margin: 25.4rem 2rem 6.8rem 2rem;
+  }
+
+  @media screen and (max-width: 50em){
+    margin: 20rem 2rem 6.8rem 2rem;
+  }
+
+  @media screen and (max-width: 48.125em){
+    margin: 15rem 0 4.625rem 0;
+  }
 }
 
 .order-table-item {
   display: flex;
   width: 100%;
 
+  @media screen and (max-width: 48.125em){
+    flex-wrap: wrap;
+  }
+
   &__name {
     max-width: 64rem;
     width: 100%;
     margin-right: 2rem;
+
+    @media screen and (max-width: 48.125em){
+      width: 100%;
+      max-width: 100%;
+      margin-right: 0;
+      order: 1;
+      background-color: $color-pink-light;
+      padding: 2rem 0 2rem 3.125rem;
+      font-size: 2.875rem;
+      align-items: center;
+    }
   }
 
   &__price {
     max-width: 39.5rem;
     margin-right: 2rem;
     width: 100%;
+
+    @media screen and (max-width: 62.5em){
+      max-width: 25.5rem;
+    }
+
+    @media screen and (max-width: 48.125em){
+      width: 50%;
+      max-width: 50%;
+      margin-right: 0;
+      order: 3;
+      display: flex;
+      justify-content: flex-end;
+      background-color: $color-pink;
+      padding: 1.75rem 3.125rem 1.25rem 0;
+    }
+
+    & .cost__price, .cost__portion {
+      @media screen and (max-width: 48.125em){
+        font-size: 2.5rem;
+      }
+    }
+
+    & .cost__portion::before {
+      @media screen and (max-width: 48.125em){
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
   }
 
   &__number {
     max-width: 30rem;
     width: 100%;
     margin-right: 2rem;
+
+    @media screen and (max-width: 62.5em){
+      max-width: 16rem;
+    }
+
+    @media screen and (max-width: 48.125em){
+      width: 50%;
+      max-width: 50%;
+      margin-right: 0;
+      order: 2;
+      background-color: $color-pink;
+      padding-left: 3.125rem;
+      font-size: 2.5rem;
+      display: flex;
+    }
   }
 
   &__total-price {
     max-width: 22.2rem;
     width: 100%;
     margin-right: 2rem;
+
+    @media screen and (max-width: 62.5em){
+      max-width: 18.2rem;
+    }
+
+    @media screen and (max-width: 48.125em){
+      order: 5;
+      width: 50%;
+      max-width: 50%;
+      margin-right: 0;
+      background-color: $color-pink-light;
+      padding: 1.5rem 0 1.75rem 3.125rem;
+      font-size: 2.875rem;
+    }
   }
 
   &__full-price {
@@ -39,10 +123,24 @@
     & > span {
       margin-right: 1rem;
     }
+
+    @media screen and (max-width: 48.125em){
+      font-size: 2.75rem;
+    }
   }
 
   &__delete {
     @include alignment-vertical;
+
+    @media screen and (max-width: 48.125em){
+      order: 6;
+      width: 50%;
+      max-width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      background-color: $color-pink-light;
+      padding-right: 3.125rem;
+    }
 
     svg {
       cursor: pointer;
@@ -54,6 +152,10 @@
   font-size: 2rem;
   color: $color-black;
   padding: 0 0 2rem 0;
+
+  @media screen and (max-width: 48.125em){
+    display: none;
+  }
 }
 
 .order-table-body {
@@ -62,8 +164,17 @@
   border-top: 1px solid $color-grey-dark;
   border-bottom: 1px solid $color-grey-dark;
 
+  @media screen and (max-width: 48.125em){
+    border: none;
+    padding: 0;
+  }
+
   .order-table-item:not(:last-child) {
     margin-bottom: 3.7rem;
+
+    @media screen and (max-width: 48.125em){
+      margin-bottom: 2.5rem;
+    }
   }
 
   & * {
@@ -77,5 +188,14 @@
 
   .cost {
     color: $color-grey;
+
+    @media screen and (max-width: 48.125em){
+      font-size: 4.125rem;
+    }
+  }
+
+  @media screen and (max-width: 48.125em){
+    padding-left: 3.125rem;
+    font-size: 2.75rem;
   }
 }

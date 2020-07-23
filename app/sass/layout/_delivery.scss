@@ -1,6 +1,10 @@
 .delivery {
-  background-color: $color-pink-light;
+  background-color: $color-pink;
   padding: 5.9rem 0 6.3rem;
+
+  @media screen and (max-width: 109.375em){
+    padding-left: 2rem;
+  }
 
   .delivery__inner {
     max-width: 167.7rem;
@@ -10,11 +14,15 @@
   &__title {
     color: $color-primary;
     font-size: 3.3rem;
-    margin-bottom: 2.5rem;
     display: inline-block;
   }
 
   &__row:not(:last-child) {
     margin-bottom: 2.5rem;
+
+    input {
+      margin-right: 1.9rem;
+      margin-top: 2.5rem;
+    }
   }
 }

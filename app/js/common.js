@@ -231,7 +231,7 @@ function slider(sliderClass) {
       },
     }
   })
-};
+}
 
 function testymonialsSlider(sliderClass) {
   var mySwiper = new Swiper(sliderClass , {
@@ -260,7 +260,7 @@ function testymonialsSlider(sliderClass) {
       }
     }
   })
-};
+}
 
 function gallery() {
   $('[data-fancybox]').fancybox({
@@ -337,7 +337,7 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
       currentPosition--;
     }
   });
-};
+}
 
 function getItemsWidth(tabs, spaceBetween) {
   let widthSum = 0;
