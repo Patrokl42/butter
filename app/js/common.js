@@ -423,6 +423,10 @@ function burgerMenu() {
   const body = document.querySelector("body");
 
   burger.addEventListener('click', () => {
+    !burger.classList.contains("burger-icon--active")
+      ? setBlur(['main'])
+      : removeBlur(['main']);
+
     burger.classList.toggle("burger-icon--active");
     navigationList.classList.toggle("nav-list--open");
     basket.classList.toggle("hide-opacity");
