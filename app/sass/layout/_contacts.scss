@@ -184,10 +184,26 @@
 
   .input--name {
     max-width: 15.2rem;
+
+    @media screen and (max-width: 31.25em){
+      max-width: calc(40% - (2.375rem / 2));
+      margin-right: 2.375rem;
+    }
   }
 
   .input--phone-number {
     max-width: 18.4rem;
+
+    @media screen and (max-width: 31.25em){
+      max-width: calc(60% - (2.375rem / 2));
+      margin-right: 0;
+    }
+  }
+
+  .btn {
+    @media screen and (max-width: 31.25em){
+      margin-top: 2.875rem;
+    }
   }
 
   .company-info__title {
@@ -200,13 +216,16 @@
 }
 
 .contact-wrapper {
+  @media screen and (max-width: 31.25em){
+    padding: 0 2rem 0 2rem
+  }
   .company-info__title {
     padding-bottom: 1rem;
   }
 
   .company-info__title {
-    @media screen and (max-width: 32.5em){
-      margin-left: 3.875rem;
+    @media screen and (max-width: 31.25em){
+      padding-left: 3.875rem;
     }
   }
 }

@@ -371,6 +371,7 @@ function stickyNavbar() {
   const sticky = navbar.offsetHeight;
   const sections = document.querySelectorAll("#section");
   const navItems = document.querySelectorAll(".nav-list__item");
+  const burger = document.querySelector(".burger-icon");
 
   window.onscroll = function() {
 
@@ -404,6 +405,7 @@ function stickyNavbar() {
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
+      burger.click();
       window.scrollTo({
         top: document
               .querySelector(`[data-section-index="${item.dataset.navIndex}"]`)
