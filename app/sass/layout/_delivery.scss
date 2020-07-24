@@ -18,11 +18,38 @@
   }
 
   &__row:not(:last-child) {
-    margin-bottom: 2.5rem;
-
     input {
       margin-right: 1.9rem;
       margin-top: 2.5rem;
+    }
+  }
+
+  &__row {
+    @media screen and (max-width: 27.875em) {
+      flex-direction: column;
+    }
+
+    .input--street, .input--comment {
+      @media screen and (max-width: 27.875em) {
+        max-width: 34rem;
+      }
+    }
+
+    .btn--green {
+      @media screen and (max-width: 27.875em) {
+        margin-right: auto;
+      }
+    }
+
+    &:last-child > * {
+      margin-top: 2.5rem;
+      max-width: 100%;
+    }
+  }
+
+  .input--phone-number {
+    @media screen and (max-width: 27.875em) {
+      max-width: 25.3rem;
     }
   }
 }

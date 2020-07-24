@@ -5,8 +5,8 @@
             input(placeholder="Ім’я" name='name').input.input--name
             input(placeholder="+380 -- -- -- ---" name='phone-number' data-mask="+380 00 00 00 000").input.input--phone-number
             input(placeholder="Вулиця" name='street').input.input--street
-            input(placeholder="Будинок" name='building').input.input--building
-            input(placeholder="Квартира" name='apartment').input.input--apartment
+            input(placeholder="Будинок  ---" name='building' data-mask="Будинок 000").input.input--building
+            input(placeholder="Квартира  ---" name='apartment' data-mask="Квартира  000").input.input--apartment
             input(placeholder="Коментар до замовлення" name='comment').input.input--comment
         .row.delivery__row
             .checkbox

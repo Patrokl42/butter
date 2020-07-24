@@ -405,7 +405,7 @@ function stickyNavbar() {
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      burger.click();
+      // burger.click();
       window.scrollTo({
         top: document
               .querySelector(`[data-section-index="${item.dataset.navIndex}"]`)

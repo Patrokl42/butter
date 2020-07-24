@@ -156,6 +156,10 @@
   @media screen and (max-width: 48.125em){
     display: none;
   }
+
+  .order-table-item__total-delete {
+    opacity: 0;
+  }
 }
 
 .order-table-body {
