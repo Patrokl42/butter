@@ -1,0 +1,33 @@
+.checkout-page {
+
+  .navigation {
+    padding-bottom: 5.3rem;
+
+    @media screen and (max-width: 50.625em){
+      padding: 3.125rem 4.375rem 3.17125rem 3.75rem;
+    }
+
+    &__inner {
+      align-items: flex-start;
+      @media screen and (max-width: 50.625em){
+        align-items: center;
+      }
+    }
+
+    &__logo {
+      display: block;
+
+      svg {
+        width: 173px;
+        height: 71px;
+      }
+
+      @media screen and (max-width: 50.625em){
+        svg {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}

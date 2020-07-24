@@ -86,6 +86,7 @@
 .basket {
     @include alignment-vertical;
     @include reset-links;
+    padding: 0.8rem 1.8rem 1rem 1.7rem;
 
     span {
         margin-right: 1rem;
@@ -101,7 +102,6 @@
 
     &__item {
         padding: 1rem;
-        margin-right: 7.6rem;
         transition: background-color .3s ease;
 
         cursor: pointer;
@@ -112,6 +112,14 @@
             @media screen and (max-width: 50.625em){
                 margin: auto;
                 margin-bottom: 2.625rem;
+            }
+        }
+
+        &:not(:nth-last-child(2)) {
+            margin-right: 7.6rem;
+
+            @media screen and (max-width: 50.625em){
+                margin-right: auto;
             }
         }
 

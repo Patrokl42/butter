@@ -32,6 +32,20 @@
         width: 20.25rem;
       }
     }
+
+    span {
+      background-color: $color-pink;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      @include alignment-vertical;
+      font-size: 11.3rem;
+      color: $color-white;
+
+      @media screen and (max-width: 37.5em) {
+        font-size: 11.95rem;
+      }
+    }
   }
 
   &__body {
