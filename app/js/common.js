@@ -17,6 +17,8 @@ window.addEventListener("load", function() {
   basket(orderBasket);
 
   slider('.gallery-container');
+  newsSlider('.dashboard-news');
+  sharesSlider('.dashboard-shares');
 
   testymonialsSlider('.testimonials-slider');
 
@@ -40,6 +42,7 @@ window.addEventListener("load", function() {
   burgerMenu();
 
   const dishesTypeArray = document.querySelectorAll('.dishes-inner');
+
   dishesTypeArray.forEach(dishesType => {
     dishesSwitcher(
         `[data-item-type = "${dishesType.dataset.itemType}"]`,
@@ -122,6 +125,7 @@ function inputDay(_input, _addButton, _removeButton, _content) {
       'Субота',
       'Неділя',
   ];
+
   const addButton = document.querySelector(`${_input} ${_addButton}` );
   const removeButton = document.querySelector(`${_input} ${_removeButton}`);
   const content = document.querySelector(`${_input} ${_content}`);
@@ -229,6 +233,42 @@ function slider(sliderClass) {
       1100: {
         slidesPerView: 4,
       },
+    }
+  })
+}
+
+function newsSlider(sliderClass) {
+  var mySwiper = new Swiper(sliderClass , {
+    slidesPerView: 1,
+    loop: true,
+    parallax: true,
+
+    navigation: {
+      nextEl: '.news-button-next',
+      prevEl: '.news-button-prev',
+    }
+  })
+}
+
+function sharesSlider(sliderClass) {
+  var mySwiper = new Swiper(sliderClass , {
+    slidesPerView: 2,
+    spaceBetween: 42,
+    loop: true,
+
+    breakpoints: {
+      300: {
+        slidesPerView: 1
+      },
+
+      750: {
+        slidesPerView: 2,
+      }
+    },
+
+    navigation: {
+      nextEl: '.shares-button-next',
+      prevEl: '.shares-button-prev',
     }
   })
 }
