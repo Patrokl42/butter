@@ -1,0 +1,24 @@
+.message {
+  display: flex;
+  margin-top: 3.3rem;
+  align-items: center;
+
+  &__icon {
+    font-weight: bold;
+    font-size: 37.7143px;
+    font-family: monospace;
+    background-color: $color-white;
+    width: 5.8rem;
+    height: 5.8rem;
+    display: flex;
+    @include alignment-vertical;
+    color: $color-black;
+    margin-right: 2.4rem;
+  }
+
+  &__text {
+    font-size: 2rem;
+    font-family: "Poiret One", sans-serif;
+    color: $color-black;
+  }
+}

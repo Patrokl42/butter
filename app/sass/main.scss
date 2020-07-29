@@ -6,11 +6,6 @@
 @import "abstracts/variables";
 @import "abstracts/fonts";
 
-@import "base/animations";
-@import "base/base";
-@import "base/typography";
-@import "base/utilities";
-
 @import "components/button";
 @import "components/tabs";
 @import "components/dishes";
@@ -24,6 +19,7 @@
 @import "components/basket";
 @import "components/radio-button";
 @import "components/select";
+@import "components/message";
 
 @import "layout/grid";
 @import "layout/footer";
@@ -37,6 +33,11 @@
 @import "layout/contacts";
 @import "layout/order-table";
 @import "layout/delivery";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
 @import "pages/home";
 @import "pages/checkout";

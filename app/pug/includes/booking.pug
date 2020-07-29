@@ -31,6 +31,10 @@ section.booking
             input(placeholder="Ім’я" name='phone-number').input.input--name
             input(placeholder="+380 -- -- -- ---" name='phone-number' data-mask="+380 00 00 00 000").input.input--phone-number
             button(type='submit').btn.btn--green='ЗАБРОНЮВАТИ'
-        .hide
-            input(id='personsInput' name="persons" type="hidden")
-            input(id='dayInput' name="day" type="hidden")
+            .hide
+                input(id='personsInput' name="persons" type="hidden")
+                input(id='dayInput' name="day" type="hidden")
+        .message.hide#booking-message
+            span.message__icon='!'
+            p.message__text='В найблищий час з вами зав’яжеться наш менеджер для підтвердження резервації'
+

@@ -79,6 +79,7 @@ function basket(orderBasket, _dishesArray) {
 
 function bookingForm() {
   const bookingForm = document.querySelector(".booking-form");
+  const bookingMessage = document.querySelector("#booking-message");
 
   bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -86,8 +87,12 @@ function bookingForm() {
     const persons = document.querySelector(".input-person .input-block__content > span").innerHTML;
     const day = document.querySelector(".input-day .input-block__content > span").innerHTML;
 
-    console.log(persons);
-    console.log(day);
+    const personsInput = document.querySelector("#personsInput");
+    const dayInput = document.querySelector("#dayInput");
+    bookingMessage.classList.remove('hide');
+
+    personsInput.value = persons;
+    dayInput.value = day;
   });
 }
 
