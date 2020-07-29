@@ -14,7 +14,7 @@ window.addEventListener("load", function() {
   }
 
   const orderBasket = [];
-  basket(orderBasket);
+  basket(orderBasket, '.dishes__item, .news-item');
 
   slider('.gallery-container');
   newsSlider('.dashboard-news');
@@ -31,7 +31,8 @@ window.addEventListener("load", function() {
       document.querySelector('.input-person'),
       document.querySelector('.input-block__plus'),
       document.querySelector('.input-block__minus'),
-      document.querySelector('.input-block__content span')
+      document.querySelector('.input-block__content span'),
+      20
   );
 
   quantity('.quantity__controls');
@@ -54,16 +55,48 @@ window.addEventListener("load", function() {
         'dishes--active'
     );
   });
+
+  bookingForm();
 });
 
-function basket(orderBasket) {
-  dishesArray = document.querySelectorAll('.dishes__item');
+function basket(orderBasket, _dishesArray) {
+  const dishesArray = document.querySelectorAll(_dishesArray);
+  const basketCounter = $('.basket');
+  let orderNumber = 0;
+
+  orderNumber > 0 ? basketCounter.addClass('basket--active') : null;
   
   dishesArray.forEach(item => {
     item.querySelector('.quantity > button').addEventListener('click', () => {
       orderBasket = addDishes(item.querySelector('.quantity'), orderBasket, item.querySelector('.quantity .quantity__info span'));
+      orderNumber = orderCounter(orderBasket);
+
+      orderNumber > 0 ? basketCounter.addClass('basket--active') : null;
+      basketCounter.attr('data-content', orderNumber);
     });
   });
+}
+
+function bookingForm() {
+  const bookingForm = document.querySelector(".booking-form");
+
+  bookingForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const persons = document.querySelector(".input-person .input-block__content > span").innerHTML;
+    const day = document.querySelector(".input-day .input-block__content > span").innerHTML;
+
+    console.log(persons);
+    console.log(day);
+  });
+}
+
+function orderCounter(orderBasket) {
+  const initialValue = 0;
+
+  return orderBasket.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.number;
+  }, initialValue);
 }
 
 function addDishes(controlsTag, orderBasket, dishesNumberTag) {
@@ -93,15 +126,16 @@ function quantity(_quantity) {
         item.querySelector('.quantity__plus'),
         item.querySelector('.quantity__minus'),
         item.querySelector('.quantity__info span'),
+        20
     )
   })
 }
 
-function inputNumber(input, addButton, removeButton, content) {
+function inputNumber(input, addButton, removeButton, content, _maxValue) {
   let amount = 1;
 
   addButton.addEventListener('click', () => {
-    if(amount < 20) {
+    if(amount < _maxValue) {
       amount++;
       content.innerHTML = amount + ' ';
     }

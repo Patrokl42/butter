@@ -3,7 +3,7 @@
 
   &::before {
     font-family: "Poiret One", sans-serif;
-    content: '3';
+    content: attr(data-content);
     background-color: $color-red-light;
     position: absolute;
     right: 0.7rem;
@@ -17,6 +17,7 @@
     font-weight: bold;
     line-height: 1.4;
     padding: 0.6px;
+    display: none;
   }
 
   &--active::before {
