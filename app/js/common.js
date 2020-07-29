@@ -131,7 +131,7 @@ function quantity(_quantity) {
         item.querySelector('.quantity__plus'),
         item.querySelector('.quantity__minus'),
         item.querySelector('.quantity__info span'),
-        20
+        item.dataset.maxItems
     )
   })
 }

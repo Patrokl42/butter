@@ -16,10 +16,10 @@ section.dashboard
                             .cost__portion
                                 span='400'
                                 span='грам'
-                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
+                    .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1 )
                         .quantity__inner
                             span='Кількість:'
-                            .quantity__controls
+                            .quantity__controls(data-max-items=Math.floor(Math.random() * 30) + 1)
                                 .quantity__plus
                                     <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
                                 .quantity__info
@@ -52,7 +52,7 @@ section.dashboard
                     .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                         .quantity__inner
                             span='Кількість:'
-                            .quantity__controls
+                            .quantity__controls(data-max-items=Math.floor(Math.random() * 30) + 1)
                                 .quantity__plus
                                     <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
                                 .quantity__info
@@ -79,7 +79,7 @@ section.dashboard
                     .quantity(data-dishes-id=Math.floor(Math.random() * 9999) + 1)
                         .quantity__inner
                             span='Кількість:'
-                            .quantity__controls
+                            .quantity__controls(data-max-items=Math.floor(Math.random() * 30) + 1)
                                 .quantity__plus
                                     <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.83057 0.75V10.25" stroke="#333333" stroke-width="2"/><path d="M0 5.5L9.5 5.5" stroke="#333333" stroke-width="2"/></svg>
                                 .quantity__info
