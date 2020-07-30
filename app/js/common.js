@@ -68,7 +68,7 @@ function basket(orderBasket, _dishesArray) {
   
   dishesArray.forEach(item => {
     item.querySelector('.quantity > button').addEventListener('click', () => {
-      orderBasket = addDishes(item.querySelector('.quantity'), orderBasket, item.querySelector('.quantity .quantity__info span'));
+      orderBasket = addDishes(item.querySelector('.quantity'), orderBasket, item.querySelector('.quantity .quantity__info span'), item.querySelector('.quantity__controls').dataset.maxItems);
       orderNumber = orderCounter(orderBasket);
 
       orderNumber > 0 ? basketCounter.addClass('basket--active') : null;
@@ -104,22 +104,24 @@ function orderCounter(orderBasket) {
   }, initialValue);
 }
 
-function addDishes(controlsTag, orderBasket, dishesNumberTag) {
+function addDishes(controlsTag, orderBasket, dishesNumberTag, maxItems) {
   const dishesId = controlsTag.dataset.dishesId * 1;
   const dishesIsExist = orderBasket.find(dishes => dishesId === dishes.id);
   const dushesNumber = dishesNumberTag.innerHTML * 1;
   dishesNumberTag.innerHTML = 1;
 
-  if (!dishesIsExist) {
-    return [...orderBasket,
-      {id: dishesId, number: dushesNumber}
-    ];
-  } else {
-    return orderBasket.map(
-      dishes => dishesId === dishes.id
-        ? { ...dishes, number: dishes.number + dushesNumber }
-        : dishes,
-    );
+  if(maxItems >= dushesNumber) {
+    if (!dishesIsExist) {
+      return [...orderBasket,
+        {id: dishesId, number: dushesNumber}
+      ];
+    } else {
+      return orderBasket.map(
+          dishes => dishesId === dishes.id && (dishes.number + dushesNumber) <= maxItems
+              ? { ...dishes, number: dishes.number + dushesNumber }
+              : dishes,
+      );
+    }
   }
 }
 
@@ -137,9 +139,9 @@ function quantity(_quantity) {
 }
 
 function inputNumber(input, addButton, removeButton, content, _maxValue) {
-  let amount = 1;
 
   addButton.addEventListener('click', () => {
+    let amount = content.innerHTML*1;
     if(amount < _maxValue) {
       amount++;
       content.innerHTML = amount + ' ';
@@ -147,6 +149,7 @@ function inputNumber(input, addButton, removeButton, content, _maxValue) {
   });
 
   removeButton.addEventListener('click', () => {
+    let amount = content.innerHTML*1;
     if(amount > 1) {
       amount--;
       content.innerHTML = amount + ' ';
