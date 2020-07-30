@@ -1,62 +1,81 @@
 window.addEventListener("load", function() {
-  if (window.matchMedia("(max-width: 660px)").matches) {
-    tabs('.tabs-menu',
-        '.tabs-menu-wrapper .tabs-prev-btn',
-        '.tabs-menu-wrapper .tabs-next-btn',
-        '.tabs-menu-wrapper .tabs__item'
-    );
-
-    tabs('.tabs-gallery',
-        '.tabs-gallery-wrapper .tabs-prev-btn',
-        '.tabs-gallery-wrapper .tabs-next-btn',
-        '.tabs-gallery-wrapper .tabs__item'
-    );
-  }
-
-  const orderBasket = [];
-  basket(orderBasket, '.dishes__item, .news-item');
-
-  slider('.gallery-container');
-  newsSlider('.dashboard-news');
-  sharesSlider('.dashboard-shares');
-
-  testymonialsSlider('.testimonials-slider');
-
-  contentSwitcher('.tabs-gallery .tabs__item','.gallery .gallery-container', 'gallery-container--active');
-  contentSwitcher('.tabs-menu .tabs__item','.dishes-wrapper .dishes-inner', 'dishes-inner--active');
-
-  inputDay('.input-day', '.input-block__plus', '.input-block__minus', '.input-block__content span');
-
-  inputNumber(
-      document.querySelector('.input-person'),
-      document.querySelector('.input-block__plus'),
-      document.querySelector('.input-block__minus'),
-      document.querySelector('.input-block__content span'),
-      20
-  );
-
   quantity('.quantity__controls');
-
-  gallery();
-
   stickyNavbar();
   burgerMenu();
 
-  const dishesTypeArray = document.querySelectorAll('.dishes-inner');
+  if(document.querySelector("body").classList.contains("home-page")) {
 
-  dishesTypeArray.forEach(dishesType => {
-    dishesSwitcher(
-        `[data-item-type = "${dishesType.dataset.itemType}"]`,
-        '.dishes',
-        '.pagination__prev',
-        '.pagination__next',
-        '.pagination__curent-position',
-        '.pagination__last-position',
-        'dishes--active'
+    if (window.matchMedia("(max-width: 660px)").matches) {
+      tabs('.tabs-menu',
+          '.tabs-menu-wrapper .tabs-prev-btn',
+          '.tabs-menu-wrapper .tabs-next-btn',
+          '.tabs-menu-wrapper .tabs__item'
+      );
+
+      tabs('.tabs-gallery',
+          '.tabs-gallery-wrapper .tabs-prev-btn',
+          '.tabs-gallery-wrapper .tabs-next-btn',
+          '.tabs-gallery-wrapper .tabs__item'
+      );
+    }
+
+    const orderBasket = [];
+    basket(orderBasket, '.dishes__item, .news-item');
+
+    slider('.gallery-container');
+    newsSlider('.dashboard-news');
+    sharesSlider('.dashboard-shares');
+
+    testymonialsSlider('.testimonials-slider');
+
+    contentSwitcher(
+        '.tabs-gallery .tabs__item',
+        '.gallery .gallery-container',
+        'gallery-container--active'
     );
-  });
 
-  bookingForm();
+    contentSwitcher(
+        '.tabs-menu .tabs__item',
+        '.dishes-wrapper .dishes-inner',
+        'dishes-inner--active'
+    );
+
+    inputDay(
+        '.input-day',
+        '.input-block__plus',
+        '.input-block__minus',
+        '.input-block__content span'
+    );
+
+    inputNumber(
+        document.querySelector('.input-person'),
+        document.querySelector('.input-block__plus'),
+        document.querySelector('.input-block__minus'),
+        document.querySelector('.input-block__content span'),
+        20
+    );
+
+    gallery();
+
+    const dishesTypeArray = document.querySelectorAll('.dishes-inner');
+
+    dishesTypeArray.forEach(dishesType => {
+      dishesSwitcher(
+          `[data-item-type = "${dishesType.dataset.itemType}"]`,
+          '.dishes',
+          '.pagination__prev',
+          '.pagination__next',
+          '.pagination__curent-position',
+          '.pagination__last-position',
+          'dishes--active'
+      );
+    });
+    bookingForm();
+  }
+
+  if(document.querySelector("body").classList.contains("checkout-page")) {
+     deleteDish('.order-table-item__delete');
+  }
 });
 
 function basket(orderBasket, _dishesArray) {
@@ -513,5 +532,15 @@ function burgerMenu() {
     navigationList.classList.toggle("nav-list--open");
     basket.classList.toggle("hide-opacity");
     body.classList.toggle('scroll-off');
+  });
+}
+
+function deleteDish(_deleteTrigger) {
+  const deleteTrigger = document.querySelectorAll(_deleteTrigger);
+
+  deleteTrigger.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      console.log(trigger.dataset.dishesId);
+    });
   });
 }
