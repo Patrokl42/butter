@@ -108,7 +108,7 @@ function addDishes(controlsTag, orderBasket, dishesNumberTag, maxItems) {
   const dishesId = controlsTag.dataset.dishesId * 1;
   const dishesIsExist = orderBasket.find(dishes => dishesId === dishes.id);
   const dushesNumber = dishesNumberTag.innerHTML * 1;
-  dishesNumberTag.innerHTML = 1;
+  dishesNumberTag.innerHTML = 0;
 
   if(maxItems >= dushesNumber) {
     if (!dishesIsExist) {
@@ -139,19 +139,19 @@ function quantity(_quantity) {
 }
 
 function inputNumber(input, addButton, removeButton, content, _maxValue) {
-
+  let maxAmount = 0;
   addButton.addEventListener('click', () => {
     let amount = content.innerHTML*1;
-    if(amount < _maxValue) {
-      amount++;
+    if(maxAmount < _maxValue) {
+      maxAmount++; amount++;
       content.innerHTML = amount + ' ';
     }
   });
 
   removeButton.addEventListener('click', () => {
     let amount = content.innerHTML*1;
-    if(amount > 1) {
-      amount--;
+    if(amount > 0) {
+      amount--; maxAmount--;
       content.innerHTML = amount + ' ';
     }
   });
