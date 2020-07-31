@@ -19,6 +19,7 @@ window.addEventListener("load", function() {
       );
     }
 
+
     const orderBasket = [];
     basket(orderBasket, '.dishes__item, .news-item');
 
@@ -71,6 +72,7 @@ window.addEventListener("load", function() {
       );
     });
     bookingForm();
+    setNewsHeight();
   }
 
   if(document.querySelector("body").classList.contains("checkout-page")) {
@@ -568,4 +570,13 @@ function showToast(message) {
   setTimeout(function(){
     toast.classList.remove("toast--show");
   },2000);
+}
+
+function setNewsHeight() {
+  const news = document.querySelectorAll(".news-item--large");
+
+  news.forEach(item => {
+    const height = item.querySelector('.news-item__inner').offsetHeight;
+    item.style.marginBottom = height + 'px';
+  });
 }
