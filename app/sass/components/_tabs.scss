@@ -16,6 +16,7 @@
 
   @media screen and (max-width: 41.25em){
     padding: 0;
+    justify-content: flex-start;
   }
 
 
@@ -28,7 +29,7 @@
 
     @media screen and (max-width: 41.25em){
       margin: 0;
-      white-space: nowrap;
+      //white-space: nowrap;
       font-size: 2.75rem;
     }
 
@@ -47,7 +48,7 @@
 
       @media screen and (max-width: 41.25em){
         display: block;
-        font-size: 4.125rem;
+        font-size: 2.75rem;
       }
     }
   }
@@ -62,7 +63,6 @@
 }
 
 .tabs-wrapper {
-  overflow: hidden;
   position: relative;
   margin-bottom: 6.375rem;
   z-index: 1;

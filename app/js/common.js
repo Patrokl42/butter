@@ -131,15 +131,20 @@ function addDishes(controlsTag, orderBasket, dishesNumberTag, maxItems) {
 
   if(maxItems >= dushesNumber) {
     if (!dishesIsExist) {
+      showToast('Страву додано в корзину');
+
       return [...orderBasket,
         {id: dishesId, number: dushesNumber}
       ];
     } else {
-      return orderBasket.map(
-          dishes => dishesId === dishes.id && (dishes.number + dushesNumber) <= maxItems
-              ? { ...dishes, number: dishes.number + dushesNumber }
-              : dishes,
-      );
+      return orderBasket.map( dishes => {
+        if (dishesId === dishes.id && (dishes.number + dushesNumber) <= maxItems) {
+          showToast('Страву додано в корзину');
+          return { ...dishes, number: dishes.number + dushesNumber }
+        } else {
+          return dishes
+        }
+      });
     }
   }
 }
@@ -412,9 +417,10 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
   const prevBtn = document.querySelector(_prevBtn);
   const nextBtn = document.querySelector(_nextBtn);
   const tabsList = document.querySelectorAll(_tabsList);
-  const tabsWith = getItemsWidth(tabsList, 36);
+  const tabsWith = getItemsWidth(tabsList, 36, tabsWrapper.offsetWidth);
   let distance = 0;
   let currentPosition = 0;
+  console.log(tabsWith);
 
   tabsWrapper.style.width = tabsWith.widthSum + 100 + 'px';
 
@@ -424,8 +430,7 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
           .slice(0, currentPosition + 1)
           .reduce((prevItem, nextItem) => prevItem + nextItem, 0);
 
-      console.log(distance, 'all with');
-      tabsWrapper.style.left = -distance + 25 + 'px';
+      tabsWrapper.style.left = -distance + 'px';
       currentPosition++;
     }
   });
@@ -433,26 +438,31 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
   prevBtn.addEventListener('click', () => {
     if (currentPosition > 0) {
       distance -= tabsWith.widthArray[currentPosition -1];
-      console.log(distance, 'all with');
-      currentPosition === 1 ? tabsWrapper.style.left = 20 + 'px' : tabsWrapper.style.left = -distance - 40 + 'px';
+      tabsWrapper.style.left = -distance + 'px';
       currentPosition--;
     }
   });
 }
 
-function getItemsWidth(tabs, spaceBetween) {
+function getItemsWidth(tabs, spaceBetween, maxWidth) {
   let widthSum = 0;
   const widthArray = [];
 
   tabs.forEach(item => {
     widthSum += item.offsetWidth + spaceBetween;
     widthArray.push(item.offsetWidth + spaceBetween);
+
+    setMaxWidth(item, maxWidth);
   });
 
   return {
     widthSum: widthSum,
     widthArray: widthArray,
   }
+}
+
+function setMaxWidth(item, maxWidth) {
+  item.style.maxWidth = maxWidth + 'px';
 }
 
 function setBlur(classList) {
@@ -506,7 +516,10 @@ function stickyNavbar() {
 
   navItems.forEach(item => {
     item.addEventListener('click', () => {
-      // burger.click();
+      burger.classList.contains("burger-icon--active")
+          ? burger.click()
+          : null
+
       window.scrollTo({
         top: document
               .querySelector(`[data-section-index="${item.dataset.navIndex}"]`)
@@ -540,7 +553,19 @@ function deleteDish(_deleteTrigger) {
 
   deleteTrigger.forEach(trigger => {
     trigger.addEventListener('click', () => {
+      showToast('Страву видалено з корзини');
       console.log(trigger.dataset.dishesId);
     });
   });
+}
+
+function showToast(message) {
+  const toast = document.querySelector(".toast");
+
+  toast.classList.add("toast--show");
+  toast.innerHTML = message;
+
+  setTimeout(function(){
+    toast.classList.remove("toast--show");
+  },2000);
 }
