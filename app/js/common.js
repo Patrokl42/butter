@@ -3,6 +3,10 @@ window.addEventListener("load", function() {
   stickyNavbar();
   burgerMenu();
 
+  if(document.querySelector("body").classList.contains("checkout-page")) {
+    deleteDish('.order-table-item__delete');
+  }
+
   if(document.querySelector("body").classList.contains("home-page")) {
 
     if (window.matchMedia("(max-width: 660px)").matches) {
@@ -17,6 +21,8 @@ window.addEventListener("load", function() {
           '.tabs-gallery-wrapper .tabs-next-btn',
           '.tabs-gallery-wrapper .tabs__item'
       );
+
+
     }
 
 
@@ -72,11 +78,10 @@ window.addEventListener("load", function() {
       );
     });
     bookingForm();
-    setNewsHeight();
-  }
 
-  if(document.querySelector("body").classList.contains("checkout-page")) {
-     deleteDish('.order-table-item__delete');
+    if (window.matchMedia("(max-width: 750px)").matches) {
+      setNewsHeight();
+    }
   }
 });
 
