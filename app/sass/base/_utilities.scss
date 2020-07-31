@@ -20,3 +20,9 @@
 .scroll-off {
   overflow: hidden;
 }
+
+.fix-safari {
+  opacity: 0;
+  position: absolute;
+  bottom: -100px;
+}
