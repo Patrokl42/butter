@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   margin: auto;
   position: relative;
+  transition: .5s all;
 
   @media screen and (max-width: 41.25em){
     position: absolute;

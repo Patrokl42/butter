@@ -50,6 +50,9 @@
   }
 
   &--with-icon {
+    text-decoration: none;
+    color: inherit;
+
     span {
       padding-right: 1.8rem;
     }

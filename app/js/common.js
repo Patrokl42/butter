@@ -391,6 +391,10 @@ function gallery() {
       removeBlur(['.navigation', '.gallery', '.header', '.menu']);
     },
 
+    afterLoad : function(instance, current) {
+      document.querySelector('.gallery-button-next').click();
+    },
+
     btnTpl: {
       close:
           '<button data-fancybox-close class="fancybox-button--close btn btn--icon btn--green" title="{{CLOSE}}">' +
@@ -427,7 +431,6 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
   const tabsWith = getItemsWidth(tabsList, 36, tabsWrapper.offsetWidth);
   let distance = 0;
   let currentPosition = 0;
-  console.log(tabsWith);
 
   tabsWrapper.style.width = tabsWith.widthSum + 100 + 'px';
 
@@ -439,6 +442,8 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
 
       tabsWrapper.style.left = -distance + 'px';
       currentPosition++;
+
+      tabsList[currentPosition].click();
     }
   });
 
@@ -447,6 +452,8 @@ function tabs(tabsClass, _prevBtn, _nextBtn, _tabsList) {
       distance -= tabsWith.widthArray[currentPosition -1];
       tabsWrapper.style.left = -distance + 'px';
       currentPosition--;
+
+      tabsList[currentPosition].click();
     }
   });
 }
@@ -581,7 +588,10 @@ function setNewsHeight() {
   const news = document.querySelectorAll(".news-item--large");
 
   news.forEach(item => {
-    const height = item.querySelector('.news-item__inner').offsetHeight;
-    item.style.marginBottom = height + 'px';
+    const newsItem = item.querySelector('.news-item__inner');
+    const newsItemSlider = item.classList.contains("swiper-slide");
+    const height = newsItem.offsetHeight || newsItemSlider.offsetHeight;
+
+    newsItemSlider ? item.style.borderBottom = height + 'px' + ' solid #fff' : item.style.marginBottom = height + 'px';
   });
 }
